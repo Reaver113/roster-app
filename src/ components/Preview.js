@@ -2,8 +2,9 @@ import "./Preview.css"
 import CurrentWeekly from "./CurrentWeekly"
 import PreviousWeekly from "./PreviousWeekly"
 import Options from './logic/Options'
+import ChangeAvailable from "./ChangeAvaliable"
 
-function Preview(clickedOption) {
+function Preview({clickedOption}) {
 
 	const renderPreview = () => {
 		
@@ -17,6 +18,10 @@ function Preview(clickedOption) {
 			case prev:
 				return (
 					<PreviousWeekly />
+				)
+			case change:
+				return (
+					<ChangeAvailable />
 				)
 			default: 
 				return null

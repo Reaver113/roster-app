@@ -5,31 +5,31 @@ import "./PreviousWeekly.css"
 const PrevRosters = [
 	{
 		id: 1,
-		name: "week1"
+		name: "Previous week1"
 	},
 	{
 		id: 2,
-		name: "week2"
+		name: "Previous week2"
 	},
 	{
 		id: 3,
-		name: "week3"
+		name: "Previous week3"
 	},
 	{
 		id: 4,
-		name: "week4"
+		name: "Previous week4"
 	},
 	{
 		id: 5,
-		name: "week5"
+		name: "Previous week5"
 	},
 	{
 		id: 6,
-		name: "week6"
+		name: "Previous week6"
 	},
 	{
 		id: 7,
-		name: "week7"
+		name: "Previous week7"
 	},
 ]
 
