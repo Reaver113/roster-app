@@ -1,4 +1,4 @@
-.CurrentRoster, .PreviousRoster, .ChangeAvailability{
+.bar{
 	border-top-left-radius: 10px;
 	border-top-right-radius: 10px;
 	border-color: black;
@@ -8,6 +8,6 @@
 	margin: 3em; 
 }
 
-.CurrentRoster:hover, .PreviousRoster:hover, .ChangeAvailability:hover {
+.bar:hover {
 	box-shadow: 0px 0px 20px 1px rgba(48, 46, 46, 0.55)
 }
