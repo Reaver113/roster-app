@@ -1,5 +1,6 @@
 import * as React from 'react';
 import dayjs from 'dayjs';
+import DeleteIcon from '@mui/icons-material/Delete'
 import TextField from '@mui/material/TextField';
 import Checkbox from '@mui/material/Checkbox';
 import FormGroup from '@mui/material/FormGroup';
@@ -46,7 +47,7 @@ function ChangeAvailable() {
 		<p className="titleRight">Manage Current Unavailability</p>
     <div className="unavailabilities">
     <div className="unavailableList">
-    <Button className="remove" variant="outlined">Remove</Button>
+    <Button className="remove" variant="contained" endIcon={<DeleteIcon />}>Remove</Button>
     </div>
     </div>
 	</>
