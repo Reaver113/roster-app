@@ -40,7 +40,7 @@ function ChangeAvailable() {
 	<FormGroup className='clickbox'>
   <FormControlLabel control={<Checkbox />} label="One Time" />
   <FormControlLabel control={<Checkbox />} label="Recurring Weekly" />
-	<Button className="send" variant="contained" endIcon={<SendIcon />}>Send</Button>
+	<Button className="submit" variant="contained" endIcon={<SendIcon />}>Submit</Button>
 	</FormGroup>
 		</div>
 		<p className="titleRight">Manage Current Unavailability</p>

@@ -27,8 +27,9 @@
 	margin-top: 5em;
 }
 
-.send {
+.submit {
 	height: 2em;
-	width: 5em;
-	margin-top: em;
+	width: 6em;
+	left: 20%;
+	top: 2%;
 }
