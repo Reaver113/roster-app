@@ -1,0 +1,10 @@
+.Calendar {
+	display: flex;
+	float: left;
+	margin: 4em;
+	padding: 5px;
+	border: 1px;
+	border-style: solid;
+	border-color: black;
+	border-radius: 20px;
+}
