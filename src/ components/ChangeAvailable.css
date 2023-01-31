@@ -2,9 +2,33 @@
 	display: flex;
 	float: left;
 	margin: 4em;
+	margin-top: 6em;
 	padding: 5px;
 	border: 1px;
 	border-style: solid;
 	border-color: black;
 	border-radius: 20px;
+}
+
+.titleLeft {
+	position: absolute;
+	display: flex;
+	float: left;
+	margin-left: 20em;
+}
+
+.titleRight {
+	display: flex;
+	float: right;
+	margin-right: 20em;
+}
+
+.clickbox {
+	margin-top: 5em;
+}
+
+.send {
+	height: 2em;
+	width: 5em;
+	margin-top: em;
 }

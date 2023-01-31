@@ -1,6 +1,11 @@
 import * as React from 'react';
 import dayjs from 'dayjs';
 import TextField from '@mui/material/TextField';
+import Checkbox from '@mui/material/Checkbox';
+import FormGroup from '@mui/material/FormGroup';
+import SendIcon from '@mui/icons-material/Send';
+import Button from '@mui/material/Button';
+import FormControlLabel from '@mui/material/FormControlLabel';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { StaticDatePicker } from '@mui/x-date-pickers/StaticDatePicker';
@@ -19,6 +24,7 @@ function ChangeAvailable() {
 
   return (
 		<>
+		<p className="titleLeft">Add New Unavailability</p>
 		<div className="Calendar">
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <StaticDatePicker
@@ -31,7 +37,13 @@ function ChangeAvailable() {
         renderInput={(params) => <TextField {...params} />}
       />
     </LocalizationProvider>
+	<FormGroup className='clickbox'>
+  <FormControlLabel control={<Checkbox />} label="One Time" />
+  <FormControlLabel control={<Checkbox />} label="Recurring Weekly" />
+	<Button className="send" variant="contained" endIcon={<SendIcon />}>Send</Button>
+	</FormGroup>
 		</div>
+		<p className="titleRight">Manage Current Unavailability</p>
 	</>
   );
 }
