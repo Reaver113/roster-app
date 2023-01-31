@@ -18,6 +18,7 @@
 }
 
 .titleRight {
+	position: relative;
 	display: flex;
 	float: right;
 	margin-right: 20em;
@@ -32,4 +33,35 @@
 	width: 6em;
 	left: 20%;
 	top: 2%;
+}
+
+.unavailabilities {
+	transform: translate(25em, 0em);
+	float: right;
+	display: flex;
+	border: 1px;
+	border-style: solid;
+	border-color: black;
+	border-radius: 20px;
+	width: 25em;
+	height: 21.5em;
+	margin-top: 6em;
+	margin-right: 4em;
+}
+
+.unavailableList {
+	height: 17em;
+	width: 100%;
+	border: 0px;
+	border-bottom: 1px;
+	border-style: solid;
+	border-color: black;
+	border-radius: 20px;
+}
+
+.remove {
+	position: absolute;
+	transform: translate(-10em, 21em);
+	height: 2em;
+	width: 6em;
 }

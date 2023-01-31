@@ -44,6 +44,11 @@ function ChangeAvailable() {
 	</FormGroup>
 		</div>
 		<p className="titleRight">Manage Current Unavailability</p>
+    <div className="unavailabilities">
+    <div className="unavailableList">
+    <Button className="remove" variant="outlined">Remove</Button>
+    </div>
+    </div>
 	</>
   );
 }
