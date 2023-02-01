@@ -2,7 +2,7 @@ import "./Preview.css"
 import CurrentWeekly from "./CurrentWeekly"
 import PreviousWeekly from "./PreviousWeekly"
 import Options from './logic/Options'
-import ChangeAvailable from "./ChangeAvaliable"
+import ChangeAvailability from "./ChangeAvailability"
 
 function Preview({clickedOption}) {
 
@@ -21,7 +21,7 @@ function Preview({clickedOption}) {
 				)
 			case change:
 				return (
-					<ChangeAvailable />
+					<ChangeAvailability />
 				)
 			default: 
 				return null

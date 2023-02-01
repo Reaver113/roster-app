@@ -22,7 +22,7 @@
 	top: 2%;
 }
 
-.unavailabilities {
+.unavailability {
 	float: right;
 	display: flex;
 	border: 1px;
@@ -35,7 +35,7 @@
 	margin-right: 12em;
 }
 
-.unavailableList {
+.unavailabilityList {
 	position: sticky;
 	height: 17em;
 	width: 100%;

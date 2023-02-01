@@ -10,9 +10,9 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { StaticDatePicker } from '@mui/x-date-pickers/StaticDatePicker';
-import "./ChangeAvailable.css"
+import "./ChangeAvailability.css"
 
-function ChangeAvailable() {
+function ChangeAvailability() {
 	const date = new Date();
 
 	let day = date.getDate();
@@ -43,8 +43,8 @@ function ChangeAvailable() {
 	<Button className="submit" variant="contained" endIcon={<SendIcon />}>Submit</Button>
 	</FormGroup>
 		</div>
-    <div className="unavailabilities">
-    <div className="unavailableList">
+    <div className="unavailability">
+    <div className="unavailabilityList">
     <Button className="remove" variant="contained" endIcon={<DeleteIcon />}>Remove</Button>
     </div>
     </div>
@@ -52,4 +52,4 @@ function ChangeAvailable() {
   );
 }
 
-export default ChangeAvailable
+export default ChangeAvailability
