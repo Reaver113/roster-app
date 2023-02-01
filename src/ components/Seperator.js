@@ -10,24 +10,9 @@ function Seperator() {
 	const handleClick = (option) => {
 		setClickedOption(option);
 	}
-
-	if (clickedOption === null) {
-		return (
-			<>
-			<img className="logo" src={logo}></img>
-			{Object.values(Options).map((option, index) => {
-			return(
-				<>
-				<div key={index} className="bar" onClick={() => handleClick(clickedOption === option ? null : option)}>{option} </div>
-				{clickedOption === option && clickedOption !== null && <Preview clickedOption={clickedOption}/>}
-				</>
-			)
-		}) }
-			</>
-		)
-	}
 	return (
 	<>
+		{clickedOption === null && (<img className="logo" src={logo}></img>)}
 		{Object.values(Options).map((option, index) => {
 			return(
 				<>

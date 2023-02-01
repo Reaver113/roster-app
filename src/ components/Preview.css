@@ -9,4 +9,5 @@
 	margin: 3em; 
 	margin-top: -3em;
 	height: 35em;
+	scroll-behavior: smooth;
 }
