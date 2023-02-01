@@ -3,7 +3,7 @@
 const Options = {
   current: "Current Roster",
 	prev: "Previous Rosters",
-	change: "Change Avaliable",
+	change: "Change Availability",
 }
 
 export default Options
