@@ -2,26 +2,13 @@
 	display: flex;
 	float: left;
 	margin: 4em;
+	margin-left: 12em;
 	margin-top: 6em;
 	padding: 5px;
 	border: 1px;
 	border-style: solid;
 	border-color: black;
 	border-radius: 20px;
-}
-
-.titleLeft {
-	position: absolute;
-	display: flex;
-	float: left;
-	margin-left: 20em;
-}
-
-.titleRight {
-	position: relative;
-	display: flex;
-	float: right;
-	margin-right: 20em;
 }
 
 .clickbox {
@@ -36,7 +23,6 @@
 }
 
 .unavailabilities {
-	transform: translate(25em, 0em);
 	float: right;
 	display: flex;
 	border: 1px;
@@ -46,7 +32,7 @@
 	width: 25em;
 	height: 21.5em;
 	margin-top: 6em;
-	margin-right: 4em;
+	margin-right: 12em;
 }
 
 .unavailableList {

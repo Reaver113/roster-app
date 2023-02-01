@@ -28,7 +28,7 @@ function Preview({clickedOption}) {
 		}
 	}
 	return (
-		<div className="Preview">
+		<div className="preview">
 		{renderPreview()}
 		</div>
 	)

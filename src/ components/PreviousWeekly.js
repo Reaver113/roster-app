@@ -87,6 +87,77 @@ const PrevRosters = [
 		id: 21,
 		name: "Previous week 21"
 	},
+	{
+		id: 22,
+		name: "Previous week 22"
+	},
+	{
+		id: 23,
+		name: "Previous week 23"
+	},
+	{
+		id: 24,
+		name: "Previous week 24"
+	},
+	{
+		id: 25,
+		name: "Previous week 25"
+	},
+	{
+		id: 26,
+		name: "Previous week 26"
+	},
+	{
+		id: 27,
+		name: "Previous week 27"
+	},
+	{
+		id: 28,
+		name: "Previous week 28"
+	},
+	{
+		id: 29,
+		name: "Previous week 29"
+	},{
+		id: 30,
+		name: "Previous week 30"
+	},
+	{
+		id: 31,
+		name: "Previous week 31"
+	},
+	{
+		id: 32,
+		name: "Previous week 32"
+	},
+	{
+		id: 33,
+		name: "Previous week 33"
+	},
+	{
+		id: 34,
+		name: "Previous week 34"
+	},
+	{
+		id: 35,
+		name: "Previous week 35"
+	},
+	{
+		id: 36,
+		name: "Previous week 36"
+	},
+	{
+		id: 37,
+		name: "Previous week 37"
+	},
+	{
+		id: 3,
+		name: "Previous week 38"
+	},
+	{
+		id: 39,
+		name: "Previous week 39"
+	},
 ]
 
 function PreviousWeekly() {

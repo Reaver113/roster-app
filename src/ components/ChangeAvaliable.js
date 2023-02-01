@@ -25,7 +25,6 @@ function ChangeAvailable() {
 
   return (
 		<>
-		<p className="titleLeft">Add New Unavailability</p>
 		<div className="Calendar">
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <StaticDatePicker
@@ -44,7 +43,6 @@ function ChangeAvailable() {
 	<Button className="submit" variant="contained" endIcon={<SendIcon />}>Submit</Button>
 	</FormGroup>
 		</div>
-		<p className="titleRight">Manage Current Unavailability</p>
     <div className="unavailabilities">
     <div className="unavailableList">
     <Button className="remove" variant="contained" endIcon={<DeleteIcon />}>Remove</Button>
