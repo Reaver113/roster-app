@@ -4,6 +4,7 @@
 }
 
 .block {
+	overflow: auto;
 	height: 30vh;
 	width: 80%;
 	margin-left: auto;
@@ -12,4 +13,23 @@
 	border-radius: 20px;
 	border-color: black;
 	border-style: solid;
+}
+
+@media (max-width: 460px) {
+
+	.weekTitle {
+		margin-top: 4em;
+	}
+
+	.block {
+		overflow: auto;
+		height: 50vh;
+		width: 80%;
+		margin-left: auto;
+		margin-right: auto;
+		border: 1px;
+		border-radius: 20px;
+		border-color: black;
+		border-style: solid;
+	}
 }
