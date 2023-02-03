@@ -1,9 +1,9 @@
-import Seperator from "./ components/Seperator";
+import Dashboard from "./ components/Dashboard";
 
 function App() {
   return (
     <div className="App">
-      <Seperator />
+      <Dashboard />
     </div>
   );
 }

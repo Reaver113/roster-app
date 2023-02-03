@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import Preview from './Preview'
-import "./Seperator.css"
+import "./Dashboard.css"
 import logo from "./img/logo.jpg"
 import Options from './logic/Options'
 
-function Seperator() {
+function Dashboard() {
     const [clickedOption, setClickedOption] = useState(null);
 
 	const handleClick = (option) => {
@@ -25,4 +25,4 @@ function Seperator() {
 	)
 }
 
-export default Seperator
+export default Dashboard
