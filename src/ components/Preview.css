@@ -12,3 +12,21 @@
 	height: 35em;
 	scroll-behavior: smooth;
 }
+
+
+@media (max-width: 1040px) {
+	.preview {
+		position: sticky;
+		overflow: auto;
+		border-bottom-left-radius: 10px;
+		border-bottom-right-radius: 10px;
+		border-color: black;
+		border-style: solid;
+		border-width: 1px;
+		text-align: center;
+		margin: 0.3em; 
+		margin-top: -3em;
+		height: 35em;
+		scroll-behavior: smooth;
+	}
+}

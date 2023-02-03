@@ -52,3 +52,101 @@
 	height: 2em;
 	width: 7em;
 }
+
+@media (max-width: 1474px) {
+
+	.Calendar {
+		display: flex;
+		float: left;
+		margin: 4em;
+		margin-right: 0.2em;
+		margin-left: 30%;
+		margin-top: 6em;
+		padding: 5px;
+		border: 1px;
+		border-style: solid;
+		border-color: black;
+		border-radius: 20px;
+	}
+
+	.unavailability {
+		float: right;
+		display: flex;
+		border: 1px;
+		border-style: solid;
+		border-color: black;
+		border-radius: 20px;
+		width: 25em;
+		height: 21.5em;
+		margin-top: 2em;
+		margin-right: 30%;
+	}
+
+}
+
+@media (max-width: 600px) {
+	
+	.Calendar {
+		flex-direction: column;
+		display: flex;
+		float: none;
+		margin: 4em;
+		margin-right: 0.1em;
+		margin-left: 0.1em;
+		margin-top: 3em;
+		padding: 5px;
+		border: 1px;
+		border-style: solid;
+		border-color: black;
+		border-radius: 20px;
+	}
+
+	.unavailability {
+		float: none;
+		display: flex;
+		border: 1px;
+		border-style: solid;
+		border-color: black;
+		border-radius: 20px;
+		width: 100%;
+		height: 21.5em;
+		margin-top: 6em;
+		margin-right: 0em;
+	}
+
+	.remove {
+		position: absolute;
+		transform: translate(-8em, 21em);
+		height: 2em;
+		width: 7em;
+	}
+	
+
+	.clickbox {
+		display: flex;
+		flex-direction: row;
+		margin-top: -3em;
+	}
+
+	.once {
+		position: absolute;
+		display: flex;
+		float: left;
+		width: 15em;
+	}
+
+	.recurring {
+		transform: translate(10em, 0px);
+		display: flex;
+		float: right;
+		width: 15em;
+	}
+
+	.submit {
+		height: 2em;
+		width: 7em;
+		left: 20%;
+		top: 2%;
+		margin-top: 3em;
+	}
+}

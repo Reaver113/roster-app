@@ -38,8 +38,8 @@ function ChangeAvailability() {
       />
     </LocalizationProvider>
 	<FormGroup className='clickbox'>
-  <FormControlLabel control={<Checkbox />} label="One Time" />
-  <FormControlLabel control={<Checkbox />} label="Recurring Weekly" />
+  <FormControlLabel className="once" control={<Checkbox />} label="One Time" />
+  <FormControlLabel className="recurring" control={<Checkbox />} label="Recurring Weekly" />
 	<Button className="submit" variant="contained" endIcon={<SendIcon />}>Submit</Button>
 	</FormGroup>
 		</div>
