@@ -1,6 +1,7 @@
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import {Navigate} from "react-router-dom"
 import Dashboard from "./ components/Dashboard";
+import Week from "./ components/Week";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Dashboard/>} exact />
           <Route path="*" element={<Navigate to="/"/>} />
+          <Route path="/Week" element={<Week/>} exact />
         </Routes>
       </Router>
     </div>

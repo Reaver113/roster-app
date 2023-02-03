@@ -163,7 +163,7 @@ const PrevRosters = [
 function PreviousWeekly() {
 	return (
 		PrevRosters.map((PrevRoster) => {
-			return <a href="./Week/{PrevRoster.id}" className="previousContainer" key={PrevRoster.id}><img src={timetable}></img><div>{PrevRoster.name}</div></a>
+			return <a href="./Week" className="previousContainer" key={PrevRoster.id}><img src={timetable}></img><div>{PrevRoster.name}</div></a>
 		})
 	)
 }
