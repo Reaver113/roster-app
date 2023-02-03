@@ -59,7 +59,7 @@
 		display: flex;
 		float: left;
 		margin: 4em;
-		margin-right: 0.2em;
+		margin-right: auto;
 		margin-left: 30%;
 		margin-top: 6em;
 		padding: 5px;
@@ -79,7 +79,42 @@
 		width: 25em;
 		height: 21.5em;
 		margin-top: 2em;
-		margin-right: 30%;
+		margin-right: 35%;
+		margin-left: auto;
+		margin-bottom: 1em;
+	}
+
+}
+
+@media (max-width: 1080px) {
+
+	.Calendar {
+		display: flex;
+		float: left;
+		margin: 4em;
+		margin-right: auto;
+		margin-left: 15%;
+		margin-top: 6em;
+		padding: 5px;
+		border: 1px;
+		border-style: solid;
+		border-color: black;
+		border-radius: 20px;
+	}
+
+	.unavailability {
+		float: left;
+		display: flex;
+		border: 1px;
+		border-style: solid;
+		border-color: black;
+		border-radius: 20px;
+		width: 25em;
+		height: 21.5em;
+		margin-top: 2em;
+		margin-right: auto;
+		margin-left: 15%;
+		margin-bottom: 1em;
 	}
 
 }
@@ -103,6 +138,7 @@
 
 	.unavailability {
 		float: none;
+		float:right;
 		display: flex;
 		border: 1px;
 		border-style: solid;
@@ -110,7 +146,7 @@
 		border-radius: 20px;
 		width: 100%;
 		height: 21.5em;
-		margin-top: 6em;
+		margin-top: -2em;
 		margin-right: 0em;
 	}
 
@@ -126,6 +162,7 @@
 		display: flex;
 		flex-direction: row;
 		margin-top: -3em;
+		margin-left: 3em;
 	}
 
 	.once {

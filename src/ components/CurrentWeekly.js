@@ -36,7 +36,7 @@ const CurrentRosters = [
 function CurrentWeekly() {
 	return (
 		CurrentRosters.map((CurrentRoster) => {
-			return <div className="currentContainer" key={CurrentRoster.id}><img src={timetable}></img><div>{CurrentRoster.name}</div></div>
+			return <a href="./Week/{CurrentRoster.id}" className="currentContainer" key={CurrentRoster.id}><img src={timetable}></img><div>{CurrentRoster.name}</div></a>
 		})
 	)
 }

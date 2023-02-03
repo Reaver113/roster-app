@@ -13,6 +13,12 @@ img {
 	float: left;
 	padding-left: 0.5em;
 	margin:0.5em;
+	text-decoration: none;
+	color: black
+}
+
+.previousContainer:visited {
+	color: black
 }
 
 .previousContainer:hover {
