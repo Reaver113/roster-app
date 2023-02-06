@@ -2,6 +2,9 @@ import timetable from "./img/timetable.png"
 import "./CurrentWeekly.css"
 
 
+
+// THIS WILL DISPLAY CURRENT WEEK AND ALL FUTURE WEEKS ROSTERS
+
 const CurrentRosters = [
 	{
 		id: 1,

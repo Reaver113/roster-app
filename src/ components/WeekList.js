@@ -1,6 +1,9 @@
 import timetable from "./img/timetable.png"
 import "./WeekList.css"
 
+
+//WILL DISPLAY ALL SHIFTS FOR THE ROSTERD WEEK THAT IS CLICKED ON
+
 const WeekRoster = [
 	{
 		id: 1,

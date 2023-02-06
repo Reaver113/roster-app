@@ -1,6 +1,7 @@
 import timetable from "./img/timetable.png"
 import "./PreviousWeekly.css"
 
+//THIS WILL DISPLAY ALL SHIFTS THAT HAVE ALL READY OCCURED TO TODAYS DATE
 
 const PrevRosters = [
 	{
