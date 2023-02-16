@@ -4,6 +4,7 @@
 }
 
 .block {
+	background-color: rgba(71, 103, 163, 0.5);
 	overflow: auto;
 	height: 30vh;
 	width: 80%;

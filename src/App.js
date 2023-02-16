@@ -1,8 +1,10 @@
+import "./App.css"
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import {Navigate} from "react-router-dom"
 import Dashboard from "./ components/Dashboard";
 import WeekView from "./ components/WeekView";
 import DayView from "./ components/DayView";
+import Background from "./ components/Background";
 
 function App() {
   return (
@@ -14,6 +16,7 @@ function App() {
           <Route path="/Week" element={<WeekView/>} exact />
           <Route path="/Day" element={<DayView/>} exact />
         </Routes>
+      <Background />
       </Router>
     </div>
   );

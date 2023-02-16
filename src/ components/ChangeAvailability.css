@@ -1,4 +1,5 @@
 .Calendar {
+	background-color: white;
 	display: flex;
 	float: left;
 	margin: 4em;

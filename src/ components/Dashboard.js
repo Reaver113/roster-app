@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Preview from './Preview'
 import "./Dashboard.css"
-import logo from "./img/logo.jpg"
+import logo from "./img/logo.png"
 import Options from './logic/Options'
 
 function Dashboard() {
