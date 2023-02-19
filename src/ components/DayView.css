@@ -2,9 +2,11 @@
 margin-bottom: 20vh;
 }
 
-.roster-container {
+.rosterContainer {
   display: flex;
   justify-content: center;
 	flex-wrap: wrap;
-	transform: translate(-180px, 0%);
+	height: 500px;
+	width: 1480px;
+	margin-left: 10%;
 }
