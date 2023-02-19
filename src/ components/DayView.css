@@ -1,0 +1,10 @@
+.RosterHeader {
+margin-bottom: 20vh;
+}
+
+.roster-container {
+  display: flex;
+  justify-content: center;
+	flex-wrap: wrap;
+	transform: translate(-180px, 0%);
+}
