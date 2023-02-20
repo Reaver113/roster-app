@@ -13,14 +13,13 @@ function Dashboard() {
 	return (
 	<>
 		{clickedOption === null && (<img className="logo" src={logo}></img>)}
-		{Object.values(Options).map((option, index) => {
-			return(
-				<>
-				<div key={index} className="bar" onClick={() => handleClick(clickedOption === option ? null : option)}>{option} </div>
+		{Object.values(Options).map((option, index) => (
+			<div key={index}>
+				<div className="bar" onClick={() => handleClick(clickedOption === option ? null : option)}>{option} </div>
 				{clickedOption === option && clickedOption !== null && <Preview clickedOption={clickedOption}/>}
-				</>
+			</div>
 			)
-		}) }
+		) }
 	</>
 	)
 }

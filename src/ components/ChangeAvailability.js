@@ -11,6 +11,7 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { StaticDatePicker } from '@mui/x-date-pickers/StaticDatePicker';
 import "./ChangeAvailability.css"
+import Staff from "./logic/Staff.js"
 
 function ChangeAvailability() {
 	const date = new Date();
@@ -45,6 +46,10 @@ function ChangeAvailability() {
 		</div>
     <div className="unavailability">
     <div className="unavailabilityList">
+    {Staff.map((staffList, index) => {
+      return staffList.unavailable ? <div key={index} className="unavailabilityItem">{staffList.unavailable}</div> : <div key={index}></div>
+})}
+      
     <Button className="remove" variant="contained" endIcon={<DeleteIcon />}>Remove</Button>
     </div>
     </div>
