@@ -10,17 +10,17 @@ const Staff = [
 	{
 		id: 2,
 		name: "Jack Smith",
-		unavailable: "16/03/23"
+		unavailable: "26/03/23"
 	},
 	{
 		id: 3,
 		name: "Jarrad Smith",
-		unavailable: "16/03/23"
+		unavailable: "30/03/23"
 	},
 	{
 		id: 4,
 		name: "Jordon Smith",
-		unavailable: "16/03/23"
+		unavailable: "Tuesday"
 	},
 	{
 		id: 5,
