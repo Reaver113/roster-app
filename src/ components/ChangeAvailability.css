@@ -24,6 +24,7 @@
 }
 
 .unavailability {
+	flex-wrap: wrap;
 	float: right;
 	display: flex;
 	border: 1px;
@@ -37,9 +38,9 @@
 }
 
 .unavailabilityList {
-	position: sticky;
+	overflow: auto;
 	height: 17em;
-	width: 100%;
+	width: 25em;
 	border: 0px;
 	border-bottom: 1px;
 	border-style: solid;
@@ -48,8 +49,7 @@
 }
 
 .remove {
-	position: absolute;
-	transform: translate(-10em, 21em);
+	transform: translate(30px, 0px);
 	height: 2em;
 	width: 7em;
 }
@@ -59,6 +59,11 @@
 	width: 100%;
 	height: 50px;
 	margin-bottom: 3px;
+}
+
+.unavailabilityItem:hover {
+	box-shadow: 0px 0px 20px 1px rgba(48, 46, 46, 0.25);
+	cursor: pointer;
 }
 
 .unavailabilityItem:first-of-type {
@@ -152,7 +157,6 @@
 
 	.unavailability {
 		float: none;
-		float:right;
 		display: flex;
 		border: 1px;
 		border-style: solid;

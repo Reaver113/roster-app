@@ -50,9 +50,10 @@ function ChangeAvailability() {
       return staffList.unavailable ? <div key={index} className="unavailabilityItem">{staffList.unavailable}</div> : <div key={index}></div>
 })}
       
+    </div>
     <Button className="remove" variant="contained" endIcon={<DeleteIcon />}>Remove</Button>
     </div>
-    </div>
+    
 	</>
   );
 }
