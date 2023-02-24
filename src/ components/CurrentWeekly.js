@@ -1,46 +1,24 @@
 import timetable from "./img/timetable.png"
 import "./CurrentWeekly.css"
-
-
+import React, { useEffect, useState } from "react";
+import { CircularProgress } from "@mui/material";
+import { dateConverter } from "../utils"; 
 
 // THIS WILL DISPLAY CURRENT WEEK AND ALL FUTURE WEEKS ROSTERS
 
-const CurrentRosters = [
-	{
-		id: 1,
-		name: "current week1"
-	},
-	{
-		id: 2,
-		name: "current week2"
-	},
-	{
-		id: 3,
-		name: "current week3"
-	},
-	{
-		id: 4,
-		name: "current week4"
-	},
-	{
-		id: 5,
-		name: "current week5"
-	},
-	{
-		id: 6,
-		name: "current week6"
-	},
-	{
-		id: 7,
-		name: " current week7"
-	},
-]
-
-function CurrentWeekly() {
+function CurrentWeekly({roster}) {
+	
 	return (
-		CurrentRosters.map((CurrentRoster) => {
-			return <a href="./Week" className="currentContainer" key={CurrentRoster.id}><img src={timetable}></img><div>{CurrentRoster.name}</div></a>
-		})
+		<>
+		{roster.length === 0 &&
+			<div className="Loading">
+			<CircularProgress />
+			</div>
+		}
+		{roster.map((rosterItem) => (
+			<a href="./Week" className="currentContainer" key={rosterItem._id}><img src={timetable}></img><div>{dateConverter(rosterItem.start)}</div></a>
+		))}
+		</>
 	)
 }
 

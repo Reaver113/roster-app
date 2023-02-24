@@ -18,6 +18,10 @@ img {
 	color: black
 }
 
+.Loading {
+	margin-top: 10em;
+}
+
 .currentContainer:visited {
 	color: black
 }

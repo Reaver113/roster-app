@@ -12,17 +12,10 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { StaticDatePicker } from '@mui/x-date-pickers/StaticDatePicker';
 import "./ChangeAvailability.css"
 import Staff from "./logic/Staff.js"
+import { todaysDate } from '../utils';
 
 function ChangeAvailability() {
-	const date = new Date();
-
-	let day = date.getDate();
-	let month = date.getMonth() + 1;
-	let year = date.getFullYear();
-
-	let currentDate = `${day}-${month}-${year}`;
-
-  const [value, setValue] = React.useState(dayjs(currentDate));
+  const [value, setValue] = React.useState(dayjs(todaysDate()));
 
   return (
 		<>
