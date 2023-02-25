@@ -11,10 +11,9 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { StaticDatePicker } from '@mui/x-date-pickers/StaticDatePicker';
 import "./ChangeAvailability.css"
-import Staff from "./logic/Staff.js"
 import { todaysDate } from '../utils';
 
-function ChangeAvailability() {
+function ChangeAvailability({unavailabilities}) {
   const [value, setValue] = React.useState(dayjs(todaysDate()));
 
   return (
@@ -39,9 +38,9 @@ function ChangeAvailability() {
 		</div>
     <div className="unavailability">
     <div className="unavailabilityList">
-    {Staff.map((staffList, index) => {
-      return staffList.unavailable ? <div key={index} className="unavailabilityItem">{staffList.unavailable}</div> : <div key={index}></div>
-})}
+    {unavailabilities.map((unavailableItem) => (
+      <div key={unavailableItem._id} className="unavailabilityItem">{unavailableItem.firstName}</div>
+))}
       
     </div>
     <Button className="remove" variant="contained" endIcon={<DeleteIcon />}>Remove</Button>

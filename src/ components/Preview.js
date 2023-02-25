@@ -8,7 +8,7 @@ import ChangeAvailability from "./ChangeAvailability"
 import { PrecisionManufacturingSharp } from "@mui/icons-material"
 
 
-function Preview({clickedOption, roster}) {
+function Preview({clickedOption, roster, unavailabilities}) {
 
 	const getCurrentRosters = (roster) => {
 		const current = []
@@ -48,7 +48,7 @@ function Preview({clickedOption, roster}) {
 				)
 			case change:
 				return (
-					<ChangeAvailability />
+					<ChangeAvailability unavailabilities={unavailabilities} />
 				)
 			default: 
 				return null
