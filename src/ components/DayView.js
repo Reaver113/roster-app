@@ -29,11 +29,12 @@ function DayView() {
       <div>   
       <h1 className="RosterHeader">{getDayOfWeek(viewingRoster.start)}, the {dateConverter(viewingRoster.start)}</h1>
       <BackButton />
+      <div className="rosterContainer">
+      <RosterView viewingRoster={viewingRoster}/>
+      </div>
       </div>
 		}
-    {/* <div className="rosterContainer">
-    <RosterView viewingRoster={viewingRoster}/>
-    </div> */}
+
     </>
   );
 }

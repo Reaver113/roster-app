@@ -1,8 +1,5 @@
 
 export const dateConverter = (dateStr) => {
-	if (!dateStr) {
-    return 
-  }
   const [yyyy, mm, dd, hh, mi] = dateStr.split(/[/:\-T]/);
 
   return `${dd}-${mm}-${yyyy}`;
@@ -22,4 +19,16 @@ export const getDayOfWeek = (dateString) => {
   const date = new Date(dateString);
   const dayOfWeek = daysOfWeek[date.getUTCDay()];
   return dayOfWeek;
+}
+
+export const hoursToArray = (start, end) => {
+  const startDateTime = new Date(start);
+  const endDateTime = new Date(end);
+  const hours = [];
+  let currentDateTime = new Date(startDateTime);
+  while (currentDateTime <= endDateTime) {
+    hours.push(currentDateTime.getUTCHours());
+    currentDateTime.setTime(currentDateTime.getTime() + (60 * 60 * 1000));
+  }
+  return hours;
 }

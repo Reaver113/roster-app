@@ -1,21 +1,30 @@
-import Roster from "./logic/Roster.js";
 import "./RosterView.css";
+import { hoursToArray } from "../utils.js"
 
-function RosterView() {
-  return Roster.map((mappedRoster) => {
-    return mappedRoster.staff.map((Staff) => (
-      <>
-        <div key={Staff.id} className="NamePlate">
-          {Staff.name}
+function RosterView({ viewingRoster }) {
+  let hourIndex = hoursToArray(viewingRoster.start, viewingRoster.end);
+
+  return (
+    <>
+      {hourIndex.map((mappedHours, index) => (
+        <div className="hourIndex" key={index}>
+          {mappedHours}
         </div>
-        {mappedRoster.hours.map((hour, index) => (
-          <div className="HourBlock" key={index}>
-            {hour}
+      ))}
+      <div className="nameContainer">
+        {viewingRoster.shifts.map((mappedShifts) => (
+          <div key={mappedShifts._id} className="NamePlate">
+            {mappedShifts.employee}
+            {hourIndex.map((hourBlock, index) => (
+              <div className="hourBlock" key={index}>
+                {hourBlock}
+              </div>
+            ))}
           </div>
         ))}
-      </>
-    ));
-  });
+      </div>
+    </>
+  );
 }
 
 export default RosterView;
