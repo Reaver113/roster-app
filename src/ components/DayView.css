@@ -5,7 +5,5 @@ margin-bottom: 20vh;
 .rosterContainer {
   display: flex;
 	flex-wrap: wrap;
-	height: 500px;
-	width: 1480px;
 	margin-left: 10%;
 }

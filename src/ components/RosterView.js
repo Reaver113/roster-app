@@ -1,30 +1,22 @@
 import "./RosterView.css";
 import { hoursToArray } from "../utils.js"
 
-function RosterView({ viewingRoster }) {
-  let hourIndex = hoursToArray(viewingRoster.start, viewingRoster.end);
+function RosterView({viewingRoster}) {
+  let hourIndex = hoursToArray(viewingRoster.start, viewingRoster.end)
 
   return (
     <>
-      {hourIndex.map((mappedHours, index) => (
-        <div className="hourIndex" key={index}>
-          {mappedHours}
-        </div>
-      ))}
       <div className="nameContainer">
         {viewingRoster.shifts.map((mappedShifts) => (
-          <div key={mappedShifts._id} className="NamePlate">
-            {mappedShifts.employee}
-            {hourIndex.map((hourBlock, index) => (
-              <div className="hourBlock" key={index}>
-                {hourBlock}
-              </div>
+          <div key={mappedShifts._id} className="rosterLine"><div className="namePlate">{mappedShifts.employee}</div>
+            {hourIndex.map((hourBlock) => (
+              <div className="hourBlock" key={hourBlock}><p className="hour">{hourBlock}</p></div>
             ))}
           </div>
         ))}
       </div>
     </>
-  );
+  )
 }
 
 export default RosterView;
