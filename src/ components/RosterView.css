@@ -18,6 +18,16 @@
   border-width: 1px;
 	flex-grow: 1;
 }
+.rosteredBlock {
+	color: rgba(0, 0, 0, 0);
+  background-color: grey;
+  height: 60px;
+  width: 80px;
+	border-color: black;
+  border-style: solid;
+  border-width: 1px;
+	flex-grow: 1;
+}
 
 .hourBlock:hover {
 	background-color: gray;
