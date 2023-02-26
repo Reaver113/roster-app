@@ -31,3 +31,21 @@ export const hoursToArray = (start, end) => {
   }
   return hours
 }
+
+export const colorHours = (hour) => {
+  if (hour <= 10) {
+    return "morningHour"
+  }
+  else if (hour > 10 && hour < 13 ) {
+    return "lateMorningHour"
+  }
+  else if (hour >= 13 && hour < 16) {
+    return "lunchHour"
+  }
+  else if (hour >= 16 && hour < 19) {
+    return "afternoonHour"
+  }
+  else {
+    return "nightHour"
+  }
+}
