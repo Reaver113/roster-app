@@ -13,8 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<DashboardContainer/>} exact />
           <Route path="*" element={<Navigate to="/"/>} />
-          <Route path="/Week" element={<WeekView/>} exact />
-          <Route path="/Day" element={<DayView/>} exact />
+          <Route path="/roster/:id" element={<DayView/>} />
         </Routes>
       <Background />
       </Router>

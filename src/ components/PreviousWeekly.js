@@ -15,7 +15,7 @@ function PreviousWeekly({roster}) {
 			</div>
 		}
 		{roster.map((rosterItem) => (
-			<a href="./Week" className="currentContainer" key={rosterItem._id}><img src={timetable}></img><div>{dateConverter(rosterItem.start)}</div></a>
+			<a href={`./roster/${rosterItem._id}`} className="currentContainer" key={rosterItem._id}><img src={timetable}></img><div>{dateConverter(rosterItem.start)}</div></a>
 		))}
 		</>
 	)

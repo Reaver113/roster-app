@@ -1,10 +1,8 @@
-/**
- * dateConverter
- * 
- * @param {string} dateStr date string 
- * @returns {String} Returns a cool string
- */
+
 export const dateConverter = (dateStr) => {
+	if (!dateStr) {
+    return 
+  }
   const [yyyy, mm, dd, hh, mi] = dateStr.split(/[/:\-T]/);
 
   return `${dd}-${mm}-${yyyy}`;
@@ -17,4 +15,11 @@ export const todaysDate = () => {
 	let year = date.getFullYear();
 	let currentDate = `${day}-${month}-${year}`;
 	return currentDate
+};
+
+export const getDayOfWeek = (dateString) => {
+  const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  const date = new Date(dateString);
+  const dayOfWeek = daysOfWeek[date.getUTCDay()];
+  return dayOfWeek;
 }

@@ -1,6 +1,6 @@
 import timetable from "./img/timetable.png"
 import "./CurrentWeekly.css"
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { CircularProgress } from "@mui/material";
 import { dateConverter } from "../utils"; 
 
@@ -16,7 +16,7 @@ function CurrentWeekly({roster}) {
 			</div>
 		}
 		{roster.map((rosterItem) => (
-			<a href="./Week" className="currentContainer" key={rosterItem._id}><img src={timetable}></img><div>{dateConverter(rosterItem.start)}</div></a>
+			<a href={`./roster/${rosterItem._id}`} className="currentContainer" key={rosterItem._id}><img src={timetable}></img><div>{dateConverter(rosterItem.start)}</div></a>
 		))}
 		</>
 	)
