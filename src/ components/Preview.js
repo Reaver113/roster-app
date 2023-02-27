@@ -7,7 +7,7 @@ import ManageUsers from "./ManageUsers"
 import CreateRosterOptions from "./CreateRosterOptions"
 
 
-function Preview({clickedOption, roster, unavailabilities, users}) {
+function Preview({clickedOption, roster, unavailabilities, users, postUsers, deleteUser}) {
 
 	const getCurrentRosters = (roster) => {
 		const current = []
@@ -51,7 +51,7 @@ function Preview({clickedOption, roster, unavailabilities, users}) {
 				)
 			case manageUsers:
 				return (
-					<ManageUsers users={users} />
+					<ManageUsers users={users} postUsers={postUsers} deleteUser={deleteUser} />
 				)
 			case createRoster:
 				return (

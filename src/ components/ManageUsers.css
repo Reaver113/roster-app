@@ -11,7 +11,7 @@
 .newUserForm {
 	float: left;
 	height: 70%;
-	margin-left: 5em;
+	margin-left: 10em;
 	margin-top: 8em;
 }
 
@@ -20,9 +20,10 @@
 	background-color: rgba(255, 255, 255, 0.6);
 	width: 30em;
 	height: 80%;
-	margin-right: 5em;
+	margin-right: 10em;
 	margin-top: 4em;
 	border-radius: 15px;
+	overflow: auto;
 }
 
 .userItem:first-child {
