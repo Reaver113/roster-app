@@ -2,8 +2,7 @@ import "./App.css"
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import {Navigate} from "react-router-dom"
 import DashboardContainer from "./ components/DashboardContainer";
-import WeekView from "./ components/WeekView";
-import DayView from "./ components/DayView";
+import RosterContainer from "./ components/RosterContainer";
 import Background from "./ components/Background";
 
 function App() {
@@ -13,7 +12,7 @@ function App() {
         <Routes>
           <Route path="/" element={<DashboardContainer/>} exact />
           <Route path="*" element={<Navigate to="/"/>} />
-          <Route path="/roster/:id" element={<DayView/>} />
+          <Route path="/roster/:id" element={<RosterContainer/>} />
         </Routes>
       <Background />
       </Router>

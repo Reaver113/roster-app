@@ -1,13 +1,13 @@
 import { getRosterById } from "../State/Roster/Fetch.js"
 import BackButton from "./BackButton.js"
-import "./DayView.css"
+import "./RosterContainer.css"
 import RosterView from "./RosterView.js"
 import { useParams } from "react-router-dom"
 import { CircularProgress } from "@mui/material";
 import { useState, useEffect } from "react"
 import { dateConverter, getDayOfWeek } from "../utils"
 
-function DayView() {
+function RosterContainer() {
 
   const { id } = useParams()
 
@@ -39,4 +39,4 @@ function DayView() {
   );
 }
 
-export default DayView;
+export default RosterContainer;

@@ -43,7 +43,7 @@ export const colorHours = (hour) => {
     return "afternoonHour"
   }
   else if (hour >= 16 && hour < 19) {
-    return "nightHour"
+    return "lateAfternnoonHour"
   }
   else {
     return "nightHour"

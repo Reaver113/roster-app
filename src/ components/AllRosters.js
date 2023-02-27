@@ -1,12 +1,12 @@
 import timetable from "./img/timetable.png"
-import "./CurrentWeekly.css"
+import "./AllRosters.css"
 import React from "react";
 import { CircularProgress } from "@mui/material";
-import { dateConverter } from "../utils"; 
+import { dateConverter, getDayOfWeek } from "../utils"; 
 
 // THIS WILL DISPLAY CURRENT WEEK AND ALL FUTURE WEEKS ROSTERS
 
-function CurrentWeekly({roster}) {
+function AllRosters({roster}) {
 	
 	return (
 		<>
@@ -16,11 +16,11 @@ function CurrentWeekly({roster}) {
 			</div>
 		}
 		{roster.map((rosterItem) => (
-			<a href={`./roster/${rosterItem._id}`} className="currentContainer" key={rosterItem._id}><img src={timetable}></img><div>{dateConverter(rosterItem.start)}</div></a>
+			<a href={`./roster/${rosterItem._id}`} className="currentContainer" key={rosterItem._id}><img src={timetable}></img><div>{getDayOfWeek(rosterItem.start)}<br />{dateConverter(rosterItem.start)}</div></a>
 		))}
 		</>
 	)
 }
 
 
-export default CurrentWeekly
+export default AllRosters

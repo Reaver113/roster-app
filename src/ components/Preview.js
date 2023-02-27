@@ -1,11 +1,8 @@
 import "./Preview.css"
-import { todaysDate } from "../utils"
-import React, { useState } from "react"
-import CurrentWeekly from "./CurrentWeekly"
-import PreviousWeekly from "./PreviousWeekly"
+import React from "react"
+import AllRosters from "./AllRosters"
 import Options from './logic/Options'
 import ChangeAvailability from "./ChangeAvailability"
-import { PrecisionManufacturingSharp } from "@mui/icons-material"
 
 
 function Preview({clickedOption, roster, unavailabilities}) {
@@ -40,11 +37,11 @@ function Preview({clickedOption, roster, unavailabilities}) {
 		switch (clickedOption) {
 			case current:
 				return (
-					<CurrentWeekly roster={getCurrentRosters(roster)} />
+					<AllRosters roster={getCurrentRosters(roster)} />
 				)
 			case prev:
 				return (
-					<PreviousWeekly roster={getPreviousRosters(roster)}/>
+					<AllRosters roster={getPreviousRosters(roster)}/>
 				)
 			case change:
 				return (
