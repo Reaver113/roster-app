@@ -3,6 +3,8 @@ import React from "react"
 import AllRosters from "./AllRosters"
 import Options from './logic/Options'
 import ChangeAvailability from "./ChangeAvailability"
+import CreateUser from "./CreateUser"
+import CreateRosterOptions from "./CreateRosterOptions"
 
 
 function Preview({clickedOption, roster, unavailabilities}) {
@@ -32,7 +34,7 @@ function Preview({clickedOption, roster, unavailabilities}) {
 	const renderPreview = () => {
 
 
-		const { current, prev, change } = Options
+		const { current, prev, change, createUser, createRoster } = Options
 
 		switch (clickedOption) {
 			case current:
@@ -46,6 +48,14 @@ function Preview({clickedOption, roster, unavailabilities}) {
 			case change:
 				return (
 					<ChangeAvailability unavailabilities={unavailabilities} />
+				)
+			case createUser:
+				return (
+					<CreateUser />
+				)
+			case createRoster:
+				return (
+					<CreateRosterOptions />
 				)
 			default: 
 				return null
