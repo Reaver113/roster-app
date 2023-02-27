@@ -32,6 +32,20 @@ export const hoursToArray = (start, end) => {
   return hours
 }
 
+export const arrayToHours = (hoursArray) => {
+  if (hoursArray.length === 0) {
+    throw new Error("Array must not be empty")
+  }
+  const startHour = hoursArray[0]
+  const endHour = hoursArray[hoursArray.length - 1] + 1
+  const startDate = new Date()
+  startDate.setUTCHours(startHour, 0, 0, 0)
+  const endDate = new Date()
+  endDate.setUTCHours(endHour, 0, 0, 0)
+  return { start: startDate.toISOString(), end: endDate.toISOString() }
+}
+
+
 export const colorHours = (hour) => {
   if (hour <= 9) {
     return "morningHour"

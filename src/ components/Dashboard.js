@@ -4,11 +4,12 @@ import "./Dashboard.css"
 import logo from "./img/logo.png"
 import Options from './logic/Options'
 
-function Dashboard({getRoster, getUnavailabilities}) {
+function Dashboard({getRoster, getUnavailabilities, getUsers}) {
     const [clickedOption, setClickedOption] = useState(null);
 
 		const [roster, setRoster] = useState([])
 		const [unavailabilities, setUnavailabilities] = useState([])
+		const [users, setUsers] = useState([])
 
 		useEffect(() => {
 			getUnavailabilities().then(function (response){
@@ -16,6 +17,9 @@ function Dashboard({getRoster, getUnavailabilities}) {
 			})
 			getRoster().then(function (response){
 				setRoster(response.data)
+			})
+			getUsers().then(function (response){
+				setUsers(response.data)
 			})
 		},[])
 	
@@ -29,7 +33,7 @@ function Dashboard({getRoster, getUnavailabilities}) {
 		{Object.values(Options).map((option, index) => (
 			<div key={index}>
 				<div className="bar" onClick={() => handleClick(clickedOption === option ? null : option)}>{option} </div>
-				{clickedOption === option && clickedOption !== null && <Preview clickedOption={clickedOption} roster={roster} unavailabilities={unavailabilities}/>}
+				{clickedOption === option && clickedOption !== null && <Preview clickedOption={clickedOption} roster={roster} unavailabilities={unavailabilities} users={users}/>}
 			</div>
 			)
 		) }
