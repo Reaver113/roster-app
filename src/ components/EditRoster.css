@@ -32,9 +32,9 @@
 	flex-shrink: 1;
 }
 
-.nightHour {
+.rosteredHour {
 	color: rgba(0, 0, 0, 0);
-  background-color: darkblue;
+  background-color: rgb(55, 55, 59);
   height: 60px;
   width: 80px;
 	border-color: black;
@@ -42,59 +42,4 @@
   border-width: 1px;
 	flex-grow: 1;
 	flex-shrink: 1;
-}
-
-.lateAfternnoonHour {
-	color: rgba(0, 0, 0, 0);
-  background-color: maroon;
-  height: 60px;
-  width: 80px;
-	border-color: black;
-  border-style: solid;
-  border-width: 1px;
-	flex-grow: 1;
-}
-
-.afternoonHour {
-	color: rgba(0, 0, 0, 0);
-  background-color: orangered;
-  height: 60px;
-  width: 80px;
-	border-color: black;
-  border-style: solid;
-  border-width: 1px;
-	flex-grow: 1;
-}
-
-.lunchHour {
-	color: rgba(0, 0, 0, 0);
-  background-color: yellow;
-  height: 60px;
-  width: 80px;
-	border-color: black;
-  border-style: solid;
-  border-width: 1px;
-	flex-grow: 1;
-}
-
-.lateMorningHour {
-	color: rgba(0, 0, 0, 0);
-  background-color: lightgoldenrodyellow;
-  height: 60px;
-  width: 80px;
-	border-color: black;
-  border-style: solid;
-  border-width: 1px;
-	flex-grow: 1;
-}
-
-.morningHour {
-	color: rgba(0, 0, 0, 0);
-  background-color: skyblue;
-  height: 60px;
-  width: 80px;
-	border-color: black;
-  border-style: solid;
-  border-width: 1px;
-	flex-grow: 1;
 }
