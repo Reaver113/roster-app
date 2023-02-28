@@ -7,13 +7,15 @@ import "./EditRoster.css";
 
 function EditRoster({ users, viewingRoster }) {
 
+	
+
   const hourIndex = hoursToArray(viewingRoster.start, viewingRoster.end);
 
   const [shiftStartHours, setShiftStartHours] = useState(
-    viewingRoster.shifts.map((shift) => shift.start)
+    viewingRoster.shifts.map((shift) => getHourNumber(shift.start))
   );
   const [shiftEndHours, setShiftEndHours] = useState(
-    viewingRoster.shifts.map((shift) => shift.end)
+    viewingRoster.shifts.map((shift) => getHourNumber(shift.end))
   );
 
   const handleStartHourChange = (event, index) => {
@@ -35,6 +37,7 @@ function EditRoster({ users, viewingRoster }) {
           <div key={mappedShifts._id} className="rosterLine">
             <div className="namePlate">{mappedShifts.employee}</div>
             <Select
+						variant="filled"
               value={shiftStartHours[index]}
               onChange={(event) => handleStartHourChange(event, index)}
               className="hourSelector"
@@ -46,6 +49,7 @@ function EditRoster({ users, viewingRoster }) {
               ))}
             </Select>
             <Select
+						variant="filled"
               value={shiftEndHours[index]}
               onChange={(event) => handleEndHourChange(event, index)}
               className="hourSelector"

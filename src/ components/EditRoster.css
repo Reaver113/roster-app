@@ -49,10 +49,8 @@
 	cursor: pointer;
 }
 
-.hourBlock {
-	cursor: pointer;
-}
 
 .hourSelector {
 	width: 4em;
+	flex-shrink: 0;
 }

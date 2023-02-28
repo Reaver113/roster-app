@@ -85,6 +85,8 @@ export const aestToUTC = (aest) => {
   return moment(aest.toISOString()).add(10, 'h').toDate().toISOString()
 }
 
-export const getHourNumber = (date) => {
-  return date.getHours();
+export const getHourNumber = (isoString) => {
+  const date = new Date(isoString);
+  const hours = date.getUTCHours();
+  return hours
 }
