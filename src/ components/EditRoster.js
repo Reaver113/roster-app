@@ -1,54 +1,72 @@
-import { hoursToArray, colorHours } from "../utils.js";
+import { hoursToArray, colorHours, getHourNumber } from "../utils.js";
 import { useState, useEffect } from "react";
+import Select from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
 import "./EditRoster.css";
 
-function EditRoster({ viewingRoster, users }) {
-  let hourIndex = hoursToArray(viewingRoster.start, viewingRoster.end);
 
-  const [blockClasses, setBlockClasses] = useState(() => {
-    const savedBlockClasses = localStorage.getItem("blockClasses");
-    if (savedBlockClasses) {
-      return JSON.parse(savedBlockClasses);
-    } else {
-      const initialBlockClasses = {};
-      users.forEach((user) => {
-        hourIndex.forEach((hour) => {
-          initialBlockClasses[`${user._id}-${hour}`] = "hourBlock";
-        });
-      });
-      return initialBlockClasses;
-    }
-  });
+function EditRoster({ users, viewingRoster }) {
 
-  useEffect(() => {
-    localStorage.setItem("blockClasses", JSON.stringify(blockClasses));
-  }, [blockClasses]);
+  const hourIndex = hoursToArray(viewingRoster.start, viewingRoster.end);
 
-  function checkRosteredHour(userId, hour) {
-    setBlockClasses((prevBlockClasses) => ({
-      ...prevBlockClasses,
-      [`${userId}-${hour}`]:
-        prevBlockClasses[`${userId}-${hour}`] === "hourBlock"
-          ? "rosteredHour"
-          : "hourBlock",
-    }));
-  }
+  const [shiftStartHours, setShiftStartHours] = useState(
+    viewingRoster.shifts.map((shift) => shift.start)
+  );
+  const [shiftEndHours, setShiftEndHours] = useState(
+    viewingRoster.shifts.map((shift) => shift.end)
+  );
+
+  const handleStartHourChange = (event, index) => {
+    const newShiftStartHours = [...shiftStartHours];
+    newShiftStartHours[index] = event.target.value;
+    setShiftStartHours(newShiftStartHours);
+  };
+
+  const handleEndHourChange = (event, index) => {
+    const newShiftEndHours = [...shiftEndHours];
+    newShiftEndHours[index] = event.target.value;
+    setShiftEndHours(newShiftEndHours);
+  };
 
   return (
     <>
       <div className="nameContainer">
-        {users.map((mappedUsers) => (
-          <div key={mappedUsers._id} className="rosterLine">
-            <div className="namePlate">
-              {mappedUsers.firstName}
-              <br /> {mappedUsers.lastName}
-            </div>
+        {viewingRoster.shifts.map((mappedShifts, index) => (
+          <div key={mappedShifts._id} className="rosterLine">
+            <div className="namePlate">{mappedShifts.employee}</div>
+            <Select
+              value={shiftStartHours[index]}
+              onChange={(event) => handleStartHourChange(event, index)}
+              className="hourSelector"
+            >
+              {hourIndex.map((hour) => (
+                <MenuItem key={hour} value={hour}>
+                  {hour}
+                </MenuItem>
+              ))}
+            </Select>
+            <Select
+              value={shiftEndHours[index]}
+              onChange={(event) => handleEndHourChange(event, index)}
+              className="hourSelector"
+            >
+              {hourIndex.map((hour) => (
+                <MenuItem key={hour} value={hour}>
+                  {hour}
+                </MenuItem>
+              ))}
+            </Select>
             {hourIndex.map((hourBlock) => (
               <div
                 className={
-                  blockClasses[`${mappedUsers._id}-${hourBlock}`] || "hourBlock"
+                  hoursToArray(mappedShifts.start, mappedShifts.end).includes(
+                    hourBlock
+                  )
+                    ? colorHours(
+                        hoursToArray(mappedShifts.start, mappedShifts.end)[0]
+                      )
+                    : "hourBlock"
                 }
-                onClick={() => checkRosteredHour(mappedUsers._id, hourBlock)}
                 key={hourBlock}
               >
                 <p className="hour">{hourBlock}</p>
@@ -60,5 +78,7 @@ function EditRoster({ viewingRoster, users }) {
     </>
   );
 }
+
+
 
 export default EditRoster;

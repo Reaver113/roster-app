@@ -55,6 +55,5 @@
 
 .deleteUserButton {
 	float: right;
-	height: 25px;
-	width: 90px;
+	transform: translate(-10px, -10px);
 }

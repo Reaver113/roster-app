@@ -55,6 +55,7 @@ function CreateRosterOptions({postRoster}) {
 			<div className="rosterHoursContainer">
       <TimePicker
 				className="timePicker"
+				views={["hours"]}
         label="Start Time"
         value={startTime}
         onChange={(newValue) => {
@@ -67,6 +68,7 @@ function CreateRosterOptions({postRoster}) {
       <TimePicker
 			className="timePicker"
         label="End Time"
+				views={["hours"]}
         value={endTime}
         onChange={(newValue) => {
           setEndTime(newValue);

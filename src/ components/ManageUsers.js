@@ -1,6 +1,6 @@
 import "./ManageUsers.css"
 import React, { useEffect, useState } from "react";
-import { TextField, Button } from "@mui/material";
+import { TextField, IconButton, Button } from "@mui/material";
 import DeleteIcon from '@mui/icons-material/Delete'
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
@@ -24,6 +24,7 @@ const ManageUsers = ({users, postUsers, deleteUser}) => {
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
+
     const newUser = {
       firstName,
       lastName,
@@ -59,6 +60,7 @@ const ManageUsers = ({users, postUsers, deleteUser}) => {
     <form onSubmit={handleFormSubmit}>
       <TextField
 				className="userInputBox"
+        variant="filled" 
         label="First Name"
         value={firstName}
         onChange={(event) => setFirstName(event.target.value)}
@@ -68,6 +70,7 @@ const ManageUsers = ({users, postUsers, deleteUser}) => {
       <br />
       <TextField
 				className="userInputBox"
+        variant="filled" 
         label="Last Name"
         value={lastName}
         onChange={(event) => setLastName(event.target.value)}
@@ -77,6 +80,7 @@ const ManageUsers = ({users, postUsers, deleteUser}) => {
       <br />
       <TextField
 				className="userInputBox"
+        variant="filled" 
         label="Email"
         type="email"
         value={email}
@@ -87,6 +91,7 @@ const ManageUsers = ({users, postUsers, deleteUser}) => {
       <br />
       <TextField
 				className="userInputBox"
+        variant="filled" 
         label="Phone Number"
         value={phone}
         onChange={(event) => setPhone(event.target.value)}
@@ -98,6 +103,7 @@ const ManageUsers = ({users, postUsers, deleteUser}) => {
       <DatePicker
       className="userInputBox"
         label="Date of Birth"
+        openTo='year'
         value={dob}
         inputFormat="DD/MM/YYYY"
         required
@@ -115,7 +121,7 @@ const ManageUsers = ({users, postUsers, deleteUser}) => {
     <div className="manageUsers">
 			{users.map((userItem)=> (
         <div key={userItem._id}className="userItem"><p className="userName">{userItem.firstName} {userItem.lastName} &nbsp;  &nbsp; {dateConverter(userItem.dob)}</p>
-        <div className="deleteUserContainer"><Button onClick={() => {clickDelete(userItem._id)}} className="deleteUserButton" endIcon={<DeleteIcon />} variant="contained" type="submit">Delete</Button></div>
+        <div className="deleteUserContainer"><IconButton onClick={() => {clickDelete(userItem._id)}} className="deleteUserButton"  variant="contained" type="submit"><DeleteIcon /></IconButton></div>
         <p className="userPhoneEmail">{userItem.email} &nbsp;  &nbsp; {formatPhoneNumber(userItem.phone)}</p>
         </div>
       ))}

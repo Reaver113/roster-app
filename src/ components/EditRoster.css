@@ -43,3 +43,16 @@
 	flex-grow: 1;
 	flex-shrink: 1;
 }
+
+
+.rosteredHour:hover {
+	cursor: pointer;
+}
+
+.hourBlock {
+	cursor: pointer;
+}
+
+.hourSelector {
+	width: 4em;
+}
