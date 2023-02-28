@@ -1,19 +1,37 @@
-import { hoursToArray, colorHours } from "../utils.js"
-import { useState } from "react"
-import "./EditRoster.css"
+import { hoursToArray, colorHours } from "../utils.js";
+import { useState, useEffect } from "react";
+import "./EditRoster.css";
 
-function EditRoster({viewingRoster, users}) {
+function EditRoster({ viewingRoster, users }) {
+  let hourIndex = hoursToArray(viewingRoster.start, viewingRoster.end);
 
-  let hourIndex = hoursToArray(viewingRoster.start, viewingRoster.end)
+  const [blockClasses, setBlockClasses] = useState(() => {
+    const savedBlockClasses = localStorage.getItem("blockClasses");
+    if (savedBlockClasses) {
+      return JSON.parse(savedBlockClasses);
+    } else {
+      const initialBlockClasses = {};
+      users.forEach((user) => {
+        hourIndex.forEach((hour) => {
+          initialBlockClasses[`${user._id}-${hour}`] = "hourBlock";
+        });
+      });
+      return initialBlockClasses;
+    }
+  });
 
-  const [blockClasses, setBlockClasses] = useState("hourBlock")
+  useEffect(() => {
+    localStorage.setItem("blockClasses", JSON.stringify(blockClasses));
+  }, [blockClasses]);
 
   function checkRosteredHour(userId, hour) {
-		console.log(userId, hour)
-    setBlockClasses(prevBlockClasses => ({
+    setBlockClasses((prevBlockClasses) => ({
       ...prevBlockClasses,
-      [`${userId}-${hour}`]: prevBlockClasses[`${userId}-${hour}`] === "hourBlock" ? "rosteredHour" : "hourBlock"
-    }))
+      [`${userId}-${hour}`]:
+        prevBlockClasses[`${userId}-${hour}`] === "hourBlock"
+          ? "rosteredHour"
+          : "hourBlock",
+    }));
   }
 
   return (
@@ -21,10 +39,15 @@ function EditRoster({viewingRoster, users}) {
       <div className="nameContainer">
         {users.map((mappedUsers) => (
           <div key={mappedUsers._id} className="rosterLine">
-            <div className="namePlate">{mappedUsers.firstName}<br/> {mappedUsers.lastName}</div>
+            <div className="namePlate">
+              {mappedUsers.firstName}
+              <br /> {mappedUsers.lastName}
+            </div>
             {hourIndex.map((hourBlock) => (
               <div
-                className={blockClasses[`${mappedUsers._id}-${hourBlock}`] || "hourBlock"}
+                className={
+                  blockClasses[`${mappedUsers._id}-${hourBlock}`] || "hourBlock"
+                }
                 onClick={() => checkRosteredHour(mappedUsers._id, hourBlock)}
                 key={hourBlock}
               >
@@ -35,7 +58,7 @@ function EditRoster({viewingRoster, users}) {
         ))}
       </div>
     </>
-  )
+  );
 }
 
-export default EditRoster
+export default EditRoster;
