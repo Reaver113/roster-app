@@ -8,6 +8,7 @@ import { useState, useEffect } from "react"
 import { dateConverter, getDayOfWeek } from "../utils"
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router";
+import SettingsIcon from '@mui/icons-material/Settings';
 
 function RosterContainer() {
 
@@ -37,7 +38,7 @@ function RosterContainer() {
       <div>   
       <h1 className="RosterHeader">{getDayOfWeek(viewingRoster.start)}, the {dateConverter(viewingRoster.start)}</h1>
       <BackButton />
-      <Button variant="contained" className="EditButton" onClick={Edit}>Edit</Button>
+      <Button variant="contained" className="EditButton" startIcon={<SettingsIcon />} onClick={Edit}>Edit</Button>
       <div className="rosterContainer">
       <RosterView viewingRoster={viewingRoster}/>
       </div>
