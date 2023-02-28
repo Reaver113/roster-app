@@ -1,5 +1,7 @@
-
 export const dateConverter = (dateStr) => {
+  if (!dateStr) {
+    return dateStr
+  }
   const [yyyy, mm, dd, hh, mi] = dateStr.split(/[/:\-T]/);
   return `${dd}-${mm}-${yyyy}`;
 }
@@ -62,4 +64,8 @@ export const colorHours = (hour) => {
   else {
     return "nightHour"
   }
+}
+
+export const formatPhoneNumber = (phoneNumber) => {
+  return phoneNumber.replace(/(\d{4})(\d{3})(\d{3})/, "$1 $2 $3")
 }

@@ -5,19 +5,25 @@ import DeleteIcon from '@mui/icons-material/Delete'
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import { dateConverter, formatPhoneNumber, dateToUTC } from "../utils.js"
+import moment from "moment";
+
+
 
 const ManageUsers = ({users, postUsers, deleteUser}) => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [dob, setDob] = useState("");
+  const [dob, setDob] = useState(null);
   const [unavailable, setUnavailable] = useState([]);
 
+  const calendarChange = (newValue) => {
+    setDob(newValue);
+  };
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
-
     const newUser = {
       firstName,
       lastName,
@@ -27,6 +33,9 @@ const ManageUsers = ({users, postUsers, deleteUser}) => {
       unavailable,
     };
 
+
+    console.log(newUser)
+
     postUsers(newUser).then(function (response){
       console.log(response.data)})
 
@@ -34,7 +43,7 @@ const ManageUsers = ({users, postUsers, deleteUser}) => {
     setLastName("");
     setEmail("");
     setPhone("");
-    setDob("");
+    setDob(null);
     setUnavailable([]);
   };
 
@@ -90,10 +99,11 @@ const ManageUsers = ({users, postUsers, deleteUser}) => {
       className="userInputBox"
         label="Date of Birth"
         value={dob}
-        onChange={(newValue) => {
-          setDob(newValue);
-        }}
+        inputFormat="DD/MM/YYYY"
+        required
+        onChange={calendarChange}
         renderInput={(params) => <TextField {...params} />}
+      
       />
       
     </LocalizationProvider>
@@ -104,7 +114,10 @@ const ManageUsers = ({users, postUsers, deleteUser}) => {
 		</div>
     <div className="manageUsers">
 			{users.map((userItem)=> (
-        <div key={userItem._id}className="userItem"><p className="userName">{userItem.firstName} {userItem.lastName}</p><div className="deleteUserContainer"><Button onClick={() => {clickDelete(userItem._id)}} className="deleteUserButton" endIcon={<DeleteIcon />} variant="contained" type="submit">Delete</Button></div><p className="userPhoneEmail">{userItem.phone} &nbsp; &nbsp; &nbsp;{userItem.email}</p></div>
+        <div key={userItem._id}className="userItem"><p className="userName">{userItem.firstName} {userItem.lastName} &nbsp;  &nbsp; {dateConverter(userItem.dob)}</p>
+        <div className="deleteUserContainer"><Button onClick={() => {clickDelete(userItem._id)}} className="deleteUserButton" endIcon={<DeleteIcon />} variant="contained" type="submit">Delete</Button></div>
+        <p className="userPhoneEmail">{userItem.email} &nbsp;  &nbsp; {formatPhoneNumber(userItem.phone)}</p>
+        </div>
       ))}
 		</div>
 		</>

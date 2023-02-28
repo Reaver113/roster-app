@@ -1,0 +1,19 @@
+.rosterDateContainer {
+	display: inline-block;
+		width: 320px;
+		margin-top: 8em;
+}
+
+.rosterHoursContainer {
+	display: inline-block;
+	margin-left: 3em;
+}
+
+.timePicker {
+	background-color: white;
+	transform: translate(0, -100px);
+}
+
+.createRosterButton {
+	transform: translate(0, -100px);
+}

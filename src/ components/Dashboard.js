@@ -23,7 +23,6 @@ function Dashboard({getRoster, getUnavailabilities, getUsers, postUsers, deleteU
 			})
 		},[])
 	
-
 	const handleClick = (option) => {
 		setClickedOption(option);
 	}
