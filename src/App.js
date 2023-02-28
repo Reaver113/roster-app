@@ -4,6 +4,8 @@ import {Navigate} from "react-router-dom"
 import DashboardContainer from "./ components/DashboardContainer";
 import RosterContainer from "./ components/RosterContainer";
 import Background from "./ components/Background";
+import EditRoster from "./ components/EditRoster";
+import EditContainer from "./ components/EditContainer";
 
 function App() {
   return (
@@ -11,8 +13,9 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<DashboardContainer/>} exact />
-          <Route path="*" element={<Navigate to="/"/>} />
           <Route path="/roster/:id" element={<RosterContainer/>} />
+          <Route path="/roster/edit/:id" element={<EditContainer/>} />
+          <Route path="*" element={<Navigate to="/"/>} />
         </Routes>
       <Background />
       </Router>

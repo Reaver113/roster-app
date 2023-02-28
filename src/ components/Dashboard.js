@@ -4,7 +4,7 @@ import "./Dashboard.css"
 import logo from "./img/logo.png"
 import Options from './logic/Options'
 
-function Dashboard({getRoster, getUnavailabilities, getUsers, postUsers, deleteUser}) {
+function Dashboard({getRoster, getUnavailabilities, getUsers, postUsers, deleteUser, postRoster}) {
     const [clickedOption, setClickedOption] = useState(null);
 
 		const [roster, setRoster] = useState([])
@@ -32,7 +32,7 @@ function Dashboard({getRoster, getUnavailabilities, getUsers, postUsers, deleteU
 		{Object.values(Options).map((option, index) => (
 			<div key={index}>
 				<div className="bar" onClick={() => handleClick(clickedOption === option ? null : option)}>{option} </div>
-				{clickedOption === option && clickedOption !== null && <Preview clickedOption={clickedOption} roster={roster} unavailabilities={unavailabilities} users={users} postUsers={postUsers} deleteUser={deleteUser}/>}
+				{clickedOption === option && clickedOption !== null && <Preview clickedOption={clickedOption} roster={roster} unavailabilities={unavailabilities} users={users} postUsers={postUsers} deleteUser={deleteUser} postRoster={postRoster}/>}
 			</div>
 			)
 		) }

@@ -1,0 +1,100 @@
+.rosterLine:first-child .hour{
+	transform: translate(0, -50px);
+	color: rgba(0, 0, 0, 1);
+}
+
+.rosterLine {
+	float: left;
+	display: flex;
+}
+
+.hourBlock {
+	color: rgba(0, 0, 0, 0);
+  background-color: white;
+  height: 60px;
+  width: 80px;
+	border-color: black;
+  border-style: solid;
+  border-width: 1px;
+	flex-grow: 1;
+}
+
+.nameContainer {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.namePlate {
+	display: inline-block;
+	width: 8vw;
+	flex-shrink: 1;
+}
+
+.nightHour {
+	color: rgba(0, 0, 0, 0);
+  background-color: darkblue;
+  height: 60px;
+  width: 80px;
+	border-color: black;
+  border-style: solid;
+  border-width: 1px;
+	flex-grow: 1;
+	flex-shrink: 1;
+}
+
+.lateAfternnoonHour {
+	color: rgba(0, 0, 0, 0);
+  background-color: maroon;
+  height: 60px;
+  width: 80px;
+	border-color: black;
+  border-style: solid;
+  border-width: 1px;
+	flex-grow: 1;
+}
+
+.afternoonHour {
+	color: rgba(0, 0, 0, 0);
+  background-color: orangered;
+  height: 60px;
+  width: 80px;
+	border-color: black;
+  border-style: solid;
+  border-width: 1px;
+	flex-grow: 1;
+}
+
+.lunchHour {
+	color: rgba(0, 0, 0, 0);
+  background-color: yellow;
+  height: 60px;
+  width: 80px;
+	border-color: black;
+  border-style: solid;
+  border-width: 1px;
+	flex-grow: 1;
+}
+
+.lateMorningHour {
+	color: rgba(0, 0, 0, 0);
+  background-color: lightgoldenrodyellow;
+  height: 60px;
+  width: 80px;
+	border-color: black;
+  border-style: solid;
+  border-width: 1px;
+	flex-grow: 1;
+}
+
+.morningHour {
+	color: rgba(0, 0, 0, 0);
+  background-color: skyblue;
+  height: 60px;
+  width: 80px;
+	border-color: black;
+  border-style: solid;
+  border-width: 1px;
+	flex-grow: 1;
+}

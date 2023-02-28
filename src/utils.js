@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 export const dateConverter = (dateStr) => {
   if (!dateStr) {
     return dateStr
@@ -68,4 +70,17 @@ export const colorHours = (hour) => {
 
 export const formatPhoneNumber = (phoneNumber) => {
   return phoneNumber.replace(/(\d{4})(\d{3})(\d{3})/, "$1 $2 $3")
+}
+
+export const combineDateTime = (obj) => {
+  const { rosterDate, ...rest } = obj;
+  const [date] = rosterDate.split('T');
+  const start = `${date}T${rest.startTime.split('T')[1]}`;
+  const end = `${date}T${rest.endTime.split('T')[1]}`;
+  return { start, end };
+}
+
+
+export const aestToUTC = (aest) => {
+  return moment(aest.toISOString()).add(10, 'h').toDate().toISOString()
 }

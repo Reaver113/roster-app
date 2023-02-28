@@ -6,7 +6,7 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { dateConverter, formatPhoneNumber, dateToUTC } from "../utils.js"
-import moment from "moment";
+import { aestToUTC } from "../utils.js"
 
 
 
@@ -29,7 +29,7 @@ const ManageUsers = ({users, postUsers, deleteUser}) => {
       lastName,
       email,
       phone,
-      dob,
+      dob: aestToUTC(dob),
       unavailable,
     };
 
