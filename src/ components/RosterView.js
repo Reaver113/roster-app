@@ -10,7 +10,7 @@ function RosterView({viewingRoster}) {
         {viewingRoster.shifts.map((mappedShifts) => (
           <div key={mappedShifts._id} className="rosterLine"><div className="namePlate">{mappedShifts.employee}</div>
             {hourIndex.map((hourBlock) => (
-              <div className={hoursToArray(mappedShifts.start, mappedShifts.end).includes(hourBlock) ? colorHours(hoursToArray(mappedShifts.start, mappedShifts.end)[0]) : "hourBlock"} key={hourBlock}><p className="hour">{hourBlock}</p></div>
+              <div className={hoursToArray(mappedShifts.start, mappedShifts.end).includes(hourBlock) ? colorHours(hoursToArray(mappedShifts.start, mappedShifts.end)[0]) : "hourBlock"} key={hourBlock}><p className="hour">{hourBlock}:00</p></div>
             ))}
           </div>
         ))}
