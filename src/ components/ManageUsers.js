@@ -1,5 +1,6 @@
 import "./ManageUsers.css"
-import React, { useEffect, useState } from "react";
+import { stateContext } from "../State/stateReducer";
+import React, { useEffect, useState, useContext } from "react";
 import { TextField, IconButton, Button } from "@mui/material";
 import DeleteIcon from '@mui/icons-material/Delete'
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
@@ -10,13 +11,16 @@ import { aestToUTC } from "../utils.js"
 
 
 
-const ManageUsers = ({users, postUsers, deleteUser}) => {
+const ManageUsers = ({postUsers, deleteUser}) => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [dob, setDob] = useState(null);
   const [unavailable, setUnavailable] = useState([]);
+
+  const { users, dispatch } = useContext(stateContext)
+
 
   const calendarChange = (newValue) => {
     setDob(newValue);
@@ -38,7 +42,7 @@ const ManageUsers = ({users, postUsers, deleteUser}) => {
     console.log(newUser)
 
     postUsers(newUser).then(function (response){
-      console.log(response.data)})
+      dispatch( { type: "addUser", user: response.data })})
 
     setFirstName("");
     setLastName("");
@@ -50,7 +54,8 @@ const ManageUsers = ({users, postUsers, deleteUser}) => {
 
   const clickDelete = (id) => {
     deleteUser(id).then(function (response){
-      console.log(response.data)})
+      console.log(response.data)
+      dispatch({ type: "deleteUser", user: response.data })})
   }
 
 

@@ -1,4 +1,4 @@
-import { arrayToTimeStart, arrayToTimeEnd, hoursToArray, colorHours, getHourNumber } from "../utils.js";
+import { arrayToTimeStart, arrayToTimeEnd, hoursToArray, colorHours, getHourNumber, matchNames } from "../utils.js";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom"
 import "./EditRoster.css";
@@ -11,10 +11,15 @@ function EditRoster({ users, viewingRoster, putRoster}) {
   const { id } = useParams()
 
   const hourIndex = hoursToArray(viewingRoster.start, viewingRoster.end);
+  const [roster, setRoster] = useState([])
 
   const [workingArray, setWorkingArray] = useState(
     viewingRoster.shifts.map((shift) => hoursToArray(shift.start, shift.end))
   );
+
+  useEffect(() => {
+    setRoster(matchNames(viewingRoster, users))
+	},[])
 
   console.log(...workingArray)
 
@@ -48,21 +53,21 @@ function EditRoster({ users, viewingRoster, putRoster}) {
   
   function PublishRoster() {
     const shifts = viewingRoster.shifts.map((shift, i) => ({
-      employee: shift.employee,
+      rosterId: viewingRoster._id,
       start: arrayToTimeStart(workingArray[i]),
       end: arrayToTimeEnd(workingArray[i])
     }));
     
 
-    const roster = {
+    const updatedRoster = {
       start: viewingRoster.start,
       end: viewingRoster.end,
-      shifts: [shifts] 
+      shifts: shifts 
     };
 
-    console.log(roster)
+    console.log(updatedRoster)
     
-    putRoster(id, roster).then(function (response){
+    putRoster(id, updatedRoster).then(function (response){
 			console.log(response.data)
     });
   }
@@ -70,9 +75,9 @@ function EditRoster({ users, viewingRoster, putRoster}) {
   return (
     <>
       <div className="nameContainer">
-        {viewingRoster.shifts.map((mappedShifts, index) => (
+        {roster.map((mappedShifts, index) => (
           <div key={mappedShifts._id} className="rosterLine">
-            <div className="namePlate">{mappedShifts.employee}</div>
+            <div className="namePlate">{mappedShifts.name}</div>
             {hourIndex.map((hourBlock) => (
               <div onClick={() => passPosition(mappedShifts.employee, hourBlock)} className={workingArray[index].includes(hourBlock) ? colorHours(workingArray[index][0]) : "hourBlock"}key={hourBlock}>
                 <p className="hour">{hourBlock}:00</p>

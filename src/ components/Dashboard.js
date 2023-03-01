@@ -1,15 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import Preview from './Preview'
 import "./Dashboard.css"
 import logo from "./img/logo.png"
 import Options from './logic/Options'
+import stateReducer, { stateContext } from "../State/stateReducer.js"
 
 function Dashboard({getRoster, getUnavailabilities, getUsers, postUsers, deleteUser, postRoster}) {
     const [clickedOption, setClickedOption] = useState(null);
 
 		const [roster, setRoster] = useState([])
 		const [unavailabilities, setUnavailabilities] = useState([])
-		const [users, setUsers] = useState([])
+
+		const { dispatch, users } = useContext(stateContext)
+
 
 		useEffect(() => {
 			getUnavailabilities().then(function (response){
@@ -19,7 +22,7 @@ function Dashboard({getRoster, getUnavailabilities, getUsers, postUsers, deleteU
 				setRoster(response.data)
 			})
 			getUsers().then(function (response){
-				setUsers(response.data)
+				dispatch({ type: "setUsers", users: response.data })
 			})
 		},[])
 	

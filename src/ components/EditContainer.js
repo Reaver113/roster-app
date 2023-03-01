@@ -3,27 +3,30 @@ import "./RosterContainer.css"
 import EditRoster from "./EditRoster"
 import { useParams } from "react-router-dom"
 import { CircularProgress } from "@mui/material";
-import { useState, useEffect } from "react"
-import { dateConverter, getDayOfWeek } from "../utils"
+import { useState, useEffect, useContext } from "react"
+import { dateConverter, getDayOfWeek, matchNames } from "../utils"
 import { getRosterById, putRoster } from "../State/Roster/Axios.js"
 import { getUsers } from "../State/User/Axios.js"
+import { stateContext } from "../State/stateReducer.js";
 
 
 function EditContainer() {
 
 	const { id } = useParams()
 	const [viewingRoster, setViewingRoster] = useState([])
-	const [users , setUsers] = useState([])
+	const { users, dispatch } = useContext(stateContext)
+
 
 	useEffect(() => {
 		getRosterById(id).then(function (response){
 			setViewingRoster(response.data)
 			console.log(response.data)
 		})
-		getUsers().then(function (response){
-			setUsers(response.data)
-			console.log(response.data)
-		})
+    if (users.length === 0) {
+      getUsers().then(function (response){
+        dispatch({ type: "setUsers", users: response.data })
+      })
+    }
 	},[])
 
   return (

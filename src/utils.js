@@ -108,3 +108,17 @@ export const defaultNightValue = () => {
   const date = dayjs().set('hour', 18).set('minute', 0).set('second', 0).set('millisecond', 0);
   return date.toISOString();
 };
+
+
+export const matchNames = (viewingRoster, users) => {
+  const matched = viewingRoster.shifts.map(shift => {
+    const employee = users.find((user) => {
+    return  user._id === shift.employee
+    })
+    return {
+      ...shift,
+      name: `${employee.firstName} ${employee.lastName}`
+    }
+  })
+  return matched
+}
