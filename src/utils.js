@@ -1,4 +1,5 @@
 import moment from 'moment';
+import dayjs from 'dayjs';
 
 export const dateConverter = (dateStr) => {
   if (!dateStr) {
@@ -36,17 +37,24 @@ export const hoursToArray = (start, end) => {
   return hours
 }
 
-export const arrayToHours = (hoursArray) => {
+export const arrayToTimeStart = (hoursArray) => {
   if (hoursArray.length === 0) {
-    throw new Error("Array must not be empty")
+    return 
   }
   const startHour = hoursArray[0]
-  const endHour = hoursArray[hoursArray.length - 1] + 1
   const startDate = new Date()
   startDate.setUTCHours(startHour, 0, 0, 0)
+  return startDate.toISOString()
+}
+
+export const arrayToTimeEnd = (hoursArray) => {
+  if (hoursArray.length === 0) {
+    return 
+  }
+  const endHour = hoursArray[hoursArray.length - 1]
   const endDate = new Date()
   endDate.setUTCHours(endHour, 0, 0, 0)
-  return { start: startDate.toISOString(), end: endDate.toISOString() }
+  return endDate.toISOString()
 }
 
 
@@ -90,3 +98,13 @@ export const getHourNumber = (isoString) => {
   const hours = date.getUTCHours();
   return hours
 }
+
+export const defaultMorningValue = () => {
+  const date = dayjs().set('hour', 8).set('minute', 0).set('second', 0).set('millisecond', 0);
+  return date.toISOString();
+};
+
+export const defaultNightValue = () => {
+  const date = dayjs().set('hour', 18).set('minute', 0).set('second', 0).set('millisecond', 0);
+  return date.toISOString();
+};

@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom"
 import { CircularProgress } from "@mui/material";
 import { useState, useEffect } from "react"
 import { dateConverter, getDayOfWeek } from "../utils"
-import { getRosterById } from "../State/Roster/Axios.js"
+import { getRosterById, putRoster } from "../State/Roster/Axios.js"
 import { getUsers } from "../State/User/Axios.js"
 
 
@@ -37,7 +37,7 @@ function EditContainer() {
       <h1 className="RosterHeader">{getDayOfWeek(viewingRoster.start)}, the {dateConverter(viewingRoster.start)}</h1>
       <BackButton />
       <div className="rosterContainer">
-      <EditRoster viewingRoster={viewingRoster} users={users}/>
+      <EditRoster viewingRoster={viewingRoster} users={users} putRoster={putRoster}/>
       </div>
       </div>
 		}

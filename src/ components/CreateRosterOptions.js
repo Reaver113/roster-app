@@ -3,18 +3,18 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { TimePicker } from '@mui/x-date-pickers/TimePicker';
 import { StaticDatePicker } from '@mui/x-date-pickers/StaticDatePicker';
 import { TextField, Button } from "@mui/material";
-import { aestToUTC, combineDateTime } from '../utils';
+import { aestToUTC, combineDateTime, defaultMorningValue, defaultNightValue } from '../utils';
 import { useNavigate } from "react-router-dom";
-import React from 'react';
+import React, { useState} from 'react';
 import "./CreateRosterOptions.css"
 
 
 
 function CreateRosterOptions({postRoster}) {
 
-	const [rosterDate, setRosterDate] = React.useState(null);
-	const [startTime, setStartTime] = React.useState(null);
-	const [endTime, setEndTime] = React.useState(null);
+	const [rosterDate, setRosterDate] = useState(null);
+	const [startTime, setStartTime] = useState(defaultMorningValue());
+	const [endTime, setEndTime] = useState(defaultNightValue());
 	const navigate = useNavigate()
 
 	const handleFormSubmit = (event) => {

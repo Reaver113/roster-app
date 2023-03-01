@@ -54,3 +54,11 @@
 	width: 4em;
 	flex-shrink: 0;
 }
+
+.publishContainer {
+	width: 100%;
+}
+
+.publish {
+	transform: translate(0, 2em);
+}
