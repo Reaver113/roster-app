@@ -57,3 +57,8 @@
 	float: right;
 	transform: translate(-10px, -10px);
 }
+
+
+.hint {
+	color: rgba(41, 120, 172, 0.8);
+}

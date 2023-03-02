@@ -120,7 +120,7 @@ const ManageUsers = ({postUsers, deleteUser}) => {
       
     </LocalizationProvider>
 			<br />
-      <br />
+      <p className="hint">New user password: Password123</p>
       <Button className="createUserButton" variant="contained" type="submit">Create User</Button>
     </form>
 		</div>
