@@ -1,5 +1,9 @@
-import moment from 'moment';
 import dayjs from 'dayjs';
+import utc from 'dayjs/plugin/utc';
+import timezone from 'dayjs/plugin/timezone';
+
+dayjs.extend(utc);
+dayjs.extend(timezone);
 
 export const dateConverter = (dateStr) => {
   if (!dateStr) {
@@ -77,7 +81,12 @@ export const colorHours = (hour) => {
 }
 
 export const formatPhoneNumber = (phoneNumber) => {
-  return phoneNumber.replace(/(\d{4})(\d{3})(\d{3})/, "$1 $2 $3")
+  if (isNaN(phoneNumber) || phoneNumber.length > 10 || phoneNumber.length < 10 ) {
+    return phoneNumber
+  }
+  else {
+    return phoneNumber.replace(/(\d{4})(\d{3})(\d{3})/, "$1 $2 $3")
+  }
 }
 
 export const combineDateTime = (obj) => {
@@ -90,7 +99,7 @@ export const combineDateTime = (obj) => {
 
 
 export const aestToUTC = (aest) => {
-  return moment(aest.toISOString()).add(10, 'h').toDate().toISOString()
+  return dayjs(aest).add(10, 'hour').toDate().toISOString();
 }
 
 export const getHourNumber = (isoString) => {

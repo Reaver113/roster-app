@@ -1,13 +1,14 @@
 import { arrayToTimeStart, arrayToTimeEnd, hoursToArray, colorHours, getHourNumber, matchNames } from "../utils.js";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom"
+import { useNavigate } from "react-router";
 import "./EditRoster.css";
 import { Button } from "@mui/material";
 
 
 function EditRoster({ users, viewingRoster, putRoster}) {
 
-	
+  const navigate = useNavigate();
   const { id } = useParams()
 
   const hourIndex = hoursToArray(viewingRoster.start, viewingRoster.end);
@@ -53,7 +54,7 @@ function EditRoster({ users, viewingRoster, putRoster}) {
   
   function PublishRoster() {
     const shifts = viewingRoster.shifts.map((shift, i) => ({
-      rosterId: viewingRoster._id,
+      employee: shift.employee,
       start: arrayToTimeStart(workingArray[i]),
       end: arrayToTimeEnd(workingArray[i])
     }));
@@ -69,6 +70,7 @@ function EditRoster({ users, viewingRoster, putRoster}) {
     
     putRoster(id, updatedRoster).then(function (response){
 			console.log(response.data)
+      navigate(-1)
     });
   }
 

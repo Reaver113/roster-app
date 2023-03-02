@@ -19,7 +19,7 @@ function Login() {
       <TextField
 				className="userInputBox"
 				variant="filled" 
-        label="Username"
+        label="Email"
         value={username}
         onChange={(event) => setUsername(event.target.value)}
         required

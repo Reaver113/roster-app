@@ -36,6 +36,7 @@ const ManageUsers = ({postUsers, deleteUser}) => {
       phone,
       dob: aestToUTC(dob),
       unavailable,
+      password: "Password123"
     };
 
 

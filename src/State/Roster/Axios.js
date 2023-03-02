@@ -12,6 +12,6 @@ export const postRoster = (newRoster) => {
 	return axios.post(`http://localhost:5000/rosters/`, {...newRoster})
 }
 
-export const putRoster = (id, updatedRoster) => {
-	return axios.put(`http://localhost:5000/rosters/${id}`, {updatedRoster})
+export const putRoster = (id, roster) => {
+	return axios.put(`http://localhost:5000/rosters/${id}`, {...roster})
 }
