@@ -1,14 +1,24 @@
 import { TextField, Button } from "@mui/material";
 import React, { useState } from "react";
 import logo from "./img/logo.png"
+import { loginUser } from "../State/Auth/Axios";
 
 function Login() {
 
-	const [username, setUsername] = useState("");
+	const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
 	const handleFormSubmit = (event) => {
     event.preventDefault();
+
+		const user = {
+			email,
+			password
+		}
+
+		loginUser(user).then(function (response){
+			console.log(response.data)
+		})
 	}
 	
 	return (
@@ -20,8 +30,8 @@ function Login() {
 				className="userInputBox"
 				variant="filled" 
         label="Email"
-        value={username}
-        onChange={(event) => setUsername(event.target.value)}
+        value={email}
+        onChange={(event) => setEmail(event.target.value)}
         required
       />
 			<br />
@@ -29,6 +39,7 @@ function Login() {
       <TextField
 				className="userInputBox"
 				variant="filled" 
+				type="password"
         label="Password"
         value={password}
         onChange={(event) => setPassword(event.target.value)}
