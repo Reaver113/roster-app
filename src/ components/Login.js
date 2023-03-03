@@ -4,6 +4,7 @@ import logo from "./img/logo.png"
 import { loginUser } from "../State/Auth/Axios";
 import "./Login.css"
 import { useNavigate } from "react-router";
+import { removeQuotes } from "../utils";
 
 function Login() {
 
@@ -28,7 +29,7 @@ function Login() {
 			} 
 			else {
 				setErrorMessage("")
-				const token = JSON.stringify(response.data);
+				const token = removeQuotes(JSON.stringify(response.data));
 				localStorage.setItem('token', token);
 				navigate(`/`)
 		}

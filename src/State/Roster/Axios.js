@@ -1,5 +1,7 @@
 import axios from "axios"
 
+const token = localStorage.getItem('token');
+
 export const getRoster = () => {
 	return  axios.get('http://localhost:5000/rosters')
 }
@@ -9,7 +11,10 @@ export const getRosterById = (id) => {
 }
 
 export const postRoster = (newRoster) => {
-	return axios.post(`http://localhost:5000/rosters/`, {...newRoster})
+	const authToken = {
+		headers: { 'Authorization': `Bearer ${token}`}
+	}
+	return axios.post(`http://localhost:5000/rosters/`, {...newRoster}, {...authToken})
 }
 
 export const putRoster = (id, roster) => {

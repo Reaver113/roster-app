@@ -3,7 +3,7 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { TimePicker } from '@mui/x-date-pickers/TimePicker';
 import { StaticDatePicker } from '@mui/x-date-pickers/StaticDatePicker';
 import { TextField, Button } from "@mui/material";
-import { aestToUTC, combineDateTime, defaultMorningValue, defaultNightValue } from '../utils';
+import { aestToUTC, combineDateTime, defaultMorningValue, defaultNightValue, removeQuotes } from '../utils';
 import { useNavigate } from "react-router-dom";
 import React, { useState} from 'react';
 import "./CreateRosterOptions.css"
@@ -11,6 +11,7 @@ import "./CreateRosterOptions.css"
 
 
 function CreateRosterOptions({postRoster}) {
+
 
 	const [rosterDate, setRosterDate] = useState(null);
 	const [startTime, setStartTime] = useState(defaultMorningValue());
@@ -26,9 +27,15 @@ function CreateRosterOptions({postRoster}) {
 			endTime: aestToUTC(endTime),
     };
 		
+		const publishingRoster = {
+			start: combineDateTime(newRoster).start,
+			end: combineDateTime(newRoster).end,
+			shifts: []
+		}
+		
 
 		
-		postRoster(combineDateTime(newRoster)).then(function (response){
+		postRoster(publishingRoster).then(function (response){
 		console.log(response.data._id);
 		navigate(`/roster/edit/${response.data._id}`)
 		})

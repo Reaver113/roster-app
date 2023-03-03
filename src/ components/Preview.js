@@ -55,7 +55,7 @@ function Preview({clickedOption, roster, unavailabilities, users, postUsers, del
 				)
 			case createRoster:
 				return (
-					<CreateRosterOptions postRoster={postRoster}/>
+					<CreateRosterOptions postRoster={postRoster} users={users}/>
 				)
 			default: 
 				return null

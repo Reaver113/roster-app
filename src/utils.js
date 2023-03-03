@@ -131,3 +131,7 @@ export const matchNames = (viewingRoster, users) => {
   })
   return matched
 }
+
+export const removeQuotes = (str) => {
+  return str.replace(/"/g, '');
+}
