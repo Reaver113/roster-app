@@ -99,7 +99,12 @@ export const combineDateTime = (obj) => {
 
 
 export const aestToUTC = (aest) => {
+if (!aest) {
+  return
+}
+else {
   return dayjs(aest).add(10, 'hour').toDate().toISOString();
+}
 }
 
 export const getHourNumber = (isoString) => {
