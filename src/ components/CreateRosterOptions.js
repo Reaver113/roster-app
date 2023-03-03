@@ -3,7 +3,7 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { TimePicker } from '@mui/x-date-pickers/TimePicker';
 import { StaticDatePicker } from '@mui/x-date-pickers/StaticDatePicker';
 import { TextField, Button } from "@mui/material";
-import { aestToUTC, combineDateTime, defaultMorningValue, defaultNightValue, removeQuotes } from '../utils';
+import { aestToUTC, combineDateTime, defaultMorningValue, defaultNightValue } from '../utils';
 import { useNavigate } from "react-router-dom";
 import React, { useState} from 'react';
 import "./CreateRosterOptions.css"
@@ -13,12 +13,16 @@ import "./CreateRosterOptions.css"
 function CreateRosterOptions({postRoster, users}) {
 
 
-	const [rosterDate, setRosterDate] = useState(null);
+	const [rosterDate, setRosterDate] = useState(new Date());
 	const [startTime, setStartTime] = useState(defaultMorningValue());
 	const [endTime, setEndTime] = useState(defaultNightValue());
+	const [errorMessage, setErrorMessage] = useState(null)
 	const navigate = useNavigate()
 
 	const handleFormSubmit = (event) => {
+		if (!rosterDate){
+			setErrorMessage("Please enter a date")
+		}
     event.preventDefault();
 
     const newRoster = {
@@ -90,8 +94,9 @@ function CreateRosterOptions({postRoster, users}) {
       />
 			<br />
 			<br />
-					<Button className="createRosterButton" variant="contained" type="submit">Create Roster</Button>
+			<Button className="createRosterButton" variant="contained" type="submit">Create Roster</Button>
 			</div>
+			<p className="errorMessage">{errorMessage}</p>
     </LocalizationProvider>
 		</form>
 		</div>

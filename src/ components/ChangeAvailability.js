@@ -10,9 +10,10 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { StaticDatePicker } from '@mui/x-date-pickers/StaticDatePicker';
 import "./ChangeAvailability.css"
 import { todaysDate } from '../utils';
+import { DatePicker } from '@mui/x-date-pickers';
 
 function ChangeAvailability({unavailabilities}) {
-  const [value, setValue] = React.useState(dayjs(todaysDate()));
+  const [value, setValue] = React.useState(new Date());
 
   return (
 		<>
