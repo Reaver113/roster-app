@@ -19,7 +19,7 @@
   margin-left: auto;
   margin-right: auto;
   height: 20em;
-	width: 35em;
+	width: 20em;
 }
 
 @media (max-width: 1040px) {
@@ -34,4 +34,5 @@
 		margin-left: 0.3em;
 		margin-right: 0.3em;
 	}
+	
 }

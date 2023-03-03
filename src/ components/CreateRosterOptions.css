@@ -17,3 +17,16 @@
 .createRosterButton {
 	transform: translate(0, -100px);
 }
+
+@media (max-width: 630px) {
+	.rosterHoursContainer {
+		display: inline-block;
+		margin-left: 0;
+		transform: translate(0, 6em);
+	}
+	.rosterDateContainer {
+		display: inline-block;
+			width: 320px;
+			margin-top: 2em;
+	}
+}

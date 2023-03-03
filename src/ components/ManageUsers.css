@@ -62,3 +62,30 @@
 .hint {
 	color: rgba(41, 120, 172, 0.8);
 }
+
+@media (max-width: 1040px) {
+	.userInputBox {
+		background-color: rgba(255, 255, 255, 1);
+		width: 100%;
+		border-radius: 8px;
+	}
+	.newUserForm {
+		float: none;
+		height: 70%;
+		margin-left: 0;
+		margin-top: 2em;
+		margin-bottom: 2em;
+	}
+
+	.manageUsers {
+		float: none;
+		background-color: rgba(255, 255, 255, 0.6);
+		width: 100%;
+		height: 80%;
+		margin-right: 0;
+		margin-top: 4em;
+		border-radius: 15px;
+		overflow: auto;
+		transform: translate(0, 1em);
+	}
+}

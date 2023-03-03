@@ -29,3 +29,16 @@ img {
 .currentContainer:hover {
 	box-shadow: 0px 0px 20px 1px rgba(48, 46, 46, 0.25)
 }
+
+@media (max-width: 1040px) {
+	.currentContainer {
+		display: flex;
+		flex-direction: column;
+		width: 8em;
+		float: left;
+		padding-left: 0.5em;
+		margin:0.5em;
+		text-decoration: none;
+		color: black
+	}
+}
