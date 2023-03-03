@@ -2,11 +2,16 @@ import { TextField, Button } from "@mui/material";
 import React, { useState } from "react";
 import logo from "./img/logo.png"
 import { loginUser } from "../State/Auth/Axios";
+import "./Login.css"
+import { useNavigate } from "react-router";
 
 function Login() {
 
+	const navigate = useNavigate();
+
 	const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+	const [errorMessage, setErrorMessage] = useState("");
 
 	const handleFormSubmit = (event) => {
     event.preventDefault();
@@ -17,7 +22,16 @@ function Login() {
 		}
 
 		loginUser(user).then(function (response){
-			console.log(response.data)
+			if (response.data.error) {
+				setErrorMessage(response.data.error)
+				setPassword("")
+			} 
+			else {
+				setErrorMessage("")
+				const token = JSON.stringify(response.data);
+				localStorage.setItem('token', token);
+				navigate(`/`)
+		}
 		})
 	}
 	
@@ -46,6 +60,7 @@ function Login() {
         required
       />
 			<br />
+			<p className="errorMessage">{errorMessage}</p>
       <br />
 			<Button className="createUserButton" variant="contained" type="submit">Login</Button>
 			</form>
