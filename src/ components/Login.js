@@ -1,7 +1,7 @@
 import { TextField, Button } from "@mui/material";
 import React, { useState } from "react";
 import logo from "./img/logo.png"
-import { loginUser } from "../State/Auth/Axios";
+import { loginUser, loginAdmin } from "../State/Auth/Axios";
 import "./Login.css"
 import { useNavigate } from "react-router";
 import { removeQuotes } from "../utils";
@@ -22,7 +22,7 @@ function Login() {
 			password
 		}
 
-		loginUser(user).then(function (response){
+		loginAdmin(user).then(function (response){
 			if (response.data.error) {
 				setErrorMessage(response.data.error)
 				setPassword("")

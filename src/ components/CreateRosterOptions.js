@@ -10,7 +10,7 @@ import "./CreateRosterOptions.css"
 
 
 
-function CreateRosterOptions({postRoster}) {
+function CreateRosterOptions({postRoster, users}) {
 
 
 	const [rosterDate, setRosterDate] = useState(null);
@@ -27,13 +27,19 @@ function CreateRosterOptions({postRoster}) {
 			endTime: aestToUTC(endTime),
     };
 		
+		const employees = users.map(user => ({
+			employee: user._id,
+			start: aestToUTC(startTime),
+			end: aestToUTC(startTime)
+		}));
+
 		const publishingRoster = {
 			start: combineDateTime(newRoster).start,
 			end: combineDateTime(newRoster).end,
-			shifts: []
+			shifts: employees
 		}
 		
-
+		console.log(publishingRoster)
 		
 		postRoster(publishingRoster).then(function (response){
 		console.log(response.data._id);

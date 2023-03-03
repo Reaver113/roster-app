@@ -8,10 +8,12 @@ import { dateConverter, getDayOfWeek, matchNames } from "../utils"
 import { getRosterById, putRoster } from "../State/Roster/Axios.js"
 import { getUsers } from "../State/User/Axios.js"
 import { stateContext } from "../State/stateReducer.js";
+import Login from "./Login.js";
 
 
 function EditContainer() {
 
+  const token = localStorage.getItem('token');
 	const { id } = useParams()
 	const [viewingRoster, setViewingRoster] = useState([])
 	const { users, dispatch } = useContext(stateContext)
@@ -30,6 +32,7 @@ function EditContainer() {
 	},[])
 
   return (
+    token ? 
     <>
     {viewingRoster.length === 0 ? 
     <div className="Loading">
@@ -44,8 +47,9 @@ function EditContainer() {
       </div>
       </div>
 		}
-
     </>
+    :
+    <Login />
   );
 }
 

@@ -11,9 +11,12 @@ import { Button } from "@mui/material";
 import { useNavigate } from "react-router";
 import SettingsIcon from '@mui/icons-material/Settings';
 import { getUsers } from "../State/User/Axios"
+import Login from "./Login";
 
 function RosterContainer() {
 
+  const token = localStorage.getItem('token');
+  
   const navigate = useNavigate();
 
   const { id } = useParams()
@@ -38,6 +41,7 @@ function RosterContainer() {
   },[])
   
   return (
+    token ? 
     <>
     {viewingRoster.length === 0 ? 
     <div className="Loading">
@@ -53,8 +57,9 @@ function RosterContainer() {
       </div>
       </div>
 		}
-
     </>
+    :
+    <Login />
   );
 }
 
