@@ -16,7 +16,7 @@
 	border-color: black;
   border-style: solid;
   border-width: 1px;
-	flex-grow: 1;
+  flex-grow: 1;
 }
 
 .nameContainer {
@@ -29,7 +29,9 @@
 .namePlate {
 	display: flex;
 	flex-wrap: wrap;
-	width: 10vw;
+	width: 55px;
+  flex-shrink: 0;
+  transform: translate(-1em, 0);
 }
 
 .nightHour {
