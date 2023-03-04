@@ -5,6 +5,7 @@ import { loginUser, loginAdmin } from "../State/Auth/Axios";
 import "./Login.css"
 import { useNavigate } from "react-router";
 import { removeQuotes } from "../utils";
+import jwt from 'jwt-decode'
 
 function Login() {
 
@@ -31,7 +32,12 @@ function Login() {
 				setErrorMessage("")
 				const token = removeQuotes(JSON.stringify(response.data));
 				localStorage.setItem('token', token);
+				let userToken = token.replace('Bearer','')
+				let currentUser = (jwt(userToken))
+				console.log(currentUser)
+				localStorage.setItem('currentUser', JSON.stringify(currentUser))
 				navigate(`/`)
+				window.location.reload(true)
 		}
 		})
 	}

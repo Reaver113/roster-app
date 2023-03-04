@@ -12,7 +12,7 @@ export const getUsers = () => {
 }
 
 export const getUnavailabilities = () => {
-	return  axios.get('http://localhost:5000/users/unavailabilities', authToken)
+	return  axios.get(`http://localhost:5000/users/unavailabilities/`, authToken)
 }
 
 export const postUsers = (newUser) => {

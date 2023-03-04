@@ -37,23 +37,23 @@ function Preview({clickedOption, roster, unavailabilities, users, postUsers, del
 		const { current, prev, change, manageUsers, createRoster } = Options
 
 		switch (clickedOption) {
-			case current:
+			case "Current Roster":
 				return (
 					<AllRosters roster={getCurrentRosters(roster)} />
 				)
-			case prev:
+			case "Previous Rosters":
 				return (
 					<AllRosters roster={getPreviousRosters(roster)}/>
 				)
-			case change:
+			case "Change Availability":
 				return (
 					<ChangeAvailability unavailabilities={unavailabilities} />
 				)
-			case manageUsers:
+			case "Manage Users":
 				return (
 					<ManageUsers users={users} postUsers={postUsers} deleteUser={deleteUser} />
 				)
-			case createRoster:
+			case "Create New Roster":
 				return (
 					<CreateRosterOptions postRoster={postRoster} users={users}/>
 				)

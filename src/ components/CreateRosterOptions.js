@@ -33,8 +33,6 @@ function CreateRosterOptions({postRoster, users}) {
 		
 		const employees = users.map(user => ({
 			employee: user._id,
-			start: aestToUTC(startTime),
-			end: aestToUTC(startTime)
 		}));
 
 		const publishingRoster = {

@@ -22,8 +22,6 @@ function EditRoster({ users, viewingRoster, putRoster}) {
     setRoster(matchNames(viewingRoster, users))
 	},[])
 
-  console.log(...workingArray)
-
   function passPosition(employee, hour) {
     const hourNumber = getHourNumber(hour);
     const newWorkingArray = [...workingArray];
@@ -66,10 +64,8 @@ function EditRoster({ users, viewingRoster, putRoster}) {
       shifts: shifts 
     };
 
-    console.log(updatedRoster)
     
     putRoster(id, updatedRoster).then(function (response){
-			console.log(response.data)
       navigate(-1)
     });
   }

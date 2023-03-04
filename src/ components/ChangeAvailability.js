@@ -13,7 +13,7 @@ import { todaysDate } from '../utils';
 import { DatePicker } from '@mui/x-date-pickers';
 
 function ChangeAvailability({unavailabilities}) {
-  const [value, setValue] = React.useState(new Date());
+  const [unavailableDate, setUnavailableDate] = React.useState(new Date());
 
   return (
 		<>
@@ -22,9 +22,9 @@ function ChangeAvailability({unavailabilities}) {
       <StaticDatePicker
         displayStaticWrapperAs="desktop"
         openTo="day"
-        value={value}
+        value={unavailableDate}
         onChange={(newValue) => {
-          setValue(newValue);
+          setUnavailableDate(newValue);
         }}
         renderInput={(params) => <TextField {...params} />}
       />
