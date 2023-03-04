@@ -8,22 +8,32 @@ import { Button } from "@mui/material";
 
 function EditRoster({ users, viewingRoster, putRoster}) {
 
+  // Get navigate and useParams from react-router-dom
   const navigate = useNavigate();
   const { id } = useParams()
 
+  // Convert viewingRoster.start and viewingRoster.end into an array of hours
   const hourIndex = hoursToArray(viewingRoster.start, viewingRoster.end);
+
+  // Set roster as an empty array initially and update it in the useEffect hook 
   const [roster, setRoster] = useState([])
 
+  // workingArray contains a list of hours each employee (shift) is working
   const [workingArray, setWorkingArray] = useState(
     viewingRoster.shifts.map((shift) => hoursToArray(shift.start, shift.end))
   );
 
+  // useEffect to update the roster using matchNames function
   useEffect(() => {
     setRoster(matchNames(viewingRoster, users))
-	},[])
+    },[])
 
+  // passPosition handles adding and removing hours from the workingArray for an employee
   function passPosition(employee, hour) {
+    // Get the correct hour index number
     const hourNumber = getHourNumber(hour);
+    
+    // Create a copy of the workingArray
     const newWorkingArray = [...workingArray];
   
     // Find the index of the employee in the viewingRoster.shifts array
@@ -50,6 +60,7 @@ function EditRoster({ users, viewingRoster, putRoster}) {
     setWorkingArray(newWorkingArray);
   }
   
+  // PublishRoster handles submitting the updated shifts to the backend through putRoster
   function PublishRoster() {
     const shifts = viewingRoster.shifts.map((shift, i) => ({
       employee: shift.employee,
@@ -64,7 +75,7 @@ function EditRoster({ users, viewingRoster, putRoster}) {
       shifts: shifts 
     };
 
-    
+    // Call putRoster with updatedRoster and navigate back to previous page on success
     putRoster(id, updatedRoster).then(function (response){
       navigate(-1)
     });
@@ -72,6 +83,7 @@ function EditRoster({ users, viewingRoster, putRoster}) {
 
   return (
     <>
+      {/* Display the roster */}
       <div className="nameContainer">
         {roster.map((mappedShifts, index) => (
           <div key={mappedShifts._id} className="rosterLine">
@@ -84,14 +96,15 @@ function EditRoster({ users, viewingRoster, putRoster}) {
           </div>
         ))}
       </div>
+
       <br />
+
+      {/* Button to publish the updated roster */}
       <div className="publishContainer">
       <Button variant="contained" onClick={() => PublishRoster()} className="publish">Publish Roster</Button>
       </div>
     </>
   );
 }
-
-
 
 export default EditRoster;

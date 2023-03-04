@@ -1,3 +1,5 @@
+
+//checks if user is admin then returns options appropriately
 function renderOptions() {
 	const user = JSON.parse(localStorage.getItem('currentUser'))
 	if (user === null) {
