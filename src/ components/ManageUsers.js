@@ -1,6 +1,6 @@
 import "./ManageUsers.css"
 import { stateContext } from "../State/stateReducer";
-import React, { useEffect, useState, useContext } from "react";
+import React, { useState, useContext } from "react";
 import { TextField, IconButton, Button } from "@mui/material";
 import DeleteIcon from '@mui/icons-material/Delete'
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';

@@ -1,7 +1,7 @@
 import { TextField, Button } from "@mui/material";
 import React, { useState } from "react";
 import logo from "./img/logo.png"
-import { loginUser, loginAdmin } from "../State/Auth/Axios";
+import { loginUser } from "../State/Auth/Axios";
 import "./Login.css"
 import { useNavigate } from "react-router";
 import { removeQuotes } from "../utils";

@@ -3,7 +3,7 @@ import Preview from './Preview'
 import "./Dashboard.css"
 import logo from "./img/logo.png"
 import renderOptions from './logic/Options'
-import stateReducer, { stateContext } from "../State/stateReducer.js"
+import { stateContext } from "../State/stateReducer.js"
 import { Button } from '@mui/material';
 import { useNavigate } from "react-router";
 
