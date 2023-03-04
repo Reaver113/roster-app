@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useReducer } from 'react';
+import React, { useReducer } from 'react';
 import "./App.css"
 import stateReducer, { stateContext } from "./State/stateReducer.js"
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
@@ -6,7 +6,6 @@ import {Navigate} from "react-router-dom"
 import DashboardContainer from "./ components/DashboardContainer";
 import RosterContainer from "./ components/RosterContainer";
 import Background from "./ components/Background";
-import EditRoster from "./ components/EditRoster";
 import EditContainer from "./ components/EditContainer";
 import LoginContainer from "./ components/LoginContainer";
 
