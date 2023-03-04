@@ -1,0 +1,7 @@
+With Rostr, you can simplify your business operations and eliminate the frustration that often comes with complicated and confusing rostering software. Our 20 years of combined experience in the retail industry has shown us that most businesses struggle with the inefficient and time-consuming rostering systems available in the market. So, we created a solution that not only meets the demands of retail and hospitality businesses but also makes their lives easier.
+
+Rostr is designed to be an all-in-one solution for your rostering needs. With its user-friendly interface, you can easily create, assign, edit, and delete time slots with just a few clicks. The software is designed in such a way that you don't need any training or a tech-savvy team to use it. With Rostr, you can easily manage your rosters without the hassle of learning complex software.
+
+The application allows you to create new users and assign them to the desired shifts, ensuring that everyone knows their working hours. Employees can also change their availability if they have upcoming days they can't work. The shifts are displayed in an easy-to-read format, making it convenient for employees to keep track of their working hours.
+
+Rostr is built on a MERN stack (MongoDB, ExpressJS, React, and NodeJS), making it a reliable and secure rostering application for your business. 
