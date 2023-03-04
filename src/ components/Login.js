@@ -23,7 +23,8 @@ function Login() {
 			password
 		}
 
-		loginAdmin(user).then(function (response){
+
+		loginUser(user).then(function (response){
 			if (response.data.error) {
 				setErrorMessage(response.data.error)
 				setPassword("")

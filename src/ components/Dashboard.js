@@ -7,7 +7,7 @@ import stateReducer, { stateContext } from "../State/stateReducer.js"
 import { Button } from '@mui/material';
 import { useNavigate } from "react-router";
 
-function Dashboard({getRoster, getUnavailabilities, getUsers, postUsers, deleteUser, postRoster}) {
+function Dashboard({getRoster, getCurrentUser, getUsers, postUsers, deleteUser, postRoster}) {
 
 		const navigate = useNavigate();
     const [clickedOption, setClickedOption] = useState(null);
@@ -24,8 +24,9 @@ function Dashboard({getRoster, getUnavailabilities, getUsers, postUsers, deleteU
 
 
 		useEffect(() => {
-			getUnavailabilities().then(function (response){
+			getCurrentUser().then(function (response){
 				setUnavailabilities(response.data)
+				console.log(unavailabilities)
 			})
 			getRoster().then(function (response){
 				setRoster(response.data)

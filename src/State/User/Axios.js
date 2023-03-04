@@ -11,6 +11,12 @@ export const getUsers = () => {
 	return axios.get('http://localhost:5000/users', authToken)
 }
 
+export const getCurrentUser = () => {
+	const currentId = JSON.parse(localStorage.getItem('currentUser')).id;
+	return axios.get(`http://localhost:5000/users/${currentId}`, authToken)
+}
+
+
 export const getUnavailabilities = () => {
 	return  axios.get(`http://localhost:5000/users/unavailabilities/`, authToken)
 }
