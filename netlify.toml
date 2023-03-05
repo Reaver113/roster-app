@@ -1,8 +1,10 @@
 [[redirects]]
-  from = "/"
-  to = "https://roster-app-production-b6ad.up.railway.app/"
+  from = "/*"
+  to = "/index.html"
   status = 200
- 
- # These are optional
-  force = true
-  headers = {X-From = "Netlify"}
+
+[[headers]]
+  # Define which paths this specific [[headers]] block will cover.
+  for = "/*"
+    [headers.values]
+    Access-Control-Allow-Origin = "*"
