@@ -15,6 +15,8 @@ import Login from "./Login";
 
 function RosterContainer() {
 
+  const user = JSON.parse(localStorage.getItem('currentUser'))
+
   // Fetch token from local storage
   const token = localStorage.getItem('token');
   
@@ -63,7 +65,8 @@ function RosterContainer() {
       <h1 className="RosterHeader">{getDayOfWeek(viewingRoster.start)}, the {dateConverter(viewingRoster.start)}</h1>
       <BackButton />
       {/*The "Edit" Button when clicked triggers the `Edit mode`*/}
-      <Button variant="contained" className="EditButton" startIcon={<SettingsIcon />} onClick={Edit}>Edit</Button>
+      {user.is_admin && (
+      <Button variant="contained" className="EditButton" startIcon={<SettingsIcon />} onClick={Edit}>Edit</Button>)}
       {/*Display RosterView component with parsed down data received from APIs*/}
       <div className="rosterContainer">
       <RosterView users={users} viewingRoster={viewingRoster}/>

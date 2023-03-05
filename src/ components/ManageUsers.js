@@ -47,6 +47,7 @@ const handleFormSubmit = (event) => {
   postUsers(newUser).then(function (response){
     dispatch( { type: "addUser", user: response.data })})
 
+
   setFirstName("");
   setLastName("");
   setEmail("");
