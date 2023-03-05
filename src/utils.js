@@ -150,18 +150,17 @@ export const defaultNightValue = () => {
 };
 
 // Matches shift objects to user objects in order to add employee name data to each shift.
-export const matchNames = (viewingRoster, users) => {
-  const matched = viewingRoster.shifts.map(shift => {
-    const employee = users.find((user) => {
-    return  user._id === shift.employee
-    })
+export const matchNames = async (viewingRoster, users) => {
+  const matched = await Promise.all(viewingRoster.shifts.map(async shift => {
+    const employee = await users.find(user => user._id === shift.employee);
     return {
       ...shift,
-      name: `${employee.firstName} ${employee.lastName}`
-    }
-  })
-  return matched
+      name: employee ? `${employee.firstName} ${employee.lastName}` : 'Unknown Employee'
+    };
+  }));
+  return matched;
 }
+
 
 // Removes quotes from a given string argument.
 export const removeQuotes = (str) => {

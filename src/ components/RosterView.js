@@ -12,8 +12,13 @@ function RosterView({ viewingRoster, users }) {
   // Using useState to maintain state of the roster and updating it using useEffect when viewingRoster and users changes 
   const [roster, setRoster] = useState([])
   useEffect(() => {
-    setRoster(matchNames(viewingRoster, users));
-  },[users, viewingRoster])
+    const updateRoster = async () => {
+      const matchedRoster = await matchNames(viewingRoster, users);
+      setRoster(matchedRoster);
+    };
+    updateRoster();
+  }, [viewingRoster, users]);
+  
 
   return (
     <>
