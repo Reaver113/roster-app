@@ -46,11 +46,9 @@ function CreateRosterOptions({postRoster, users}) {
         end: combineDateTime(newRoster).end,
         shifts: employees
       }
-      console.log(publishingRoster)
       
       // POST new roster using API call, go to the Edit Roster view if successful
       postRoster(publishingRoster).then(function (response){
-        console.log(response.data._id);
         navigate(`/roster/edit/${response.data._id}`);
       })
     } 

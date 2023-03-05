@@ -42,7 +42,6 @@ function Login() {
 							
 							// Extract the currentUser information from the JWT
 							let currentUser = (jwt(userToken))
-							console.log(currentUser)
 							// Set the currentUser in the local storage
 							localStorage.setItem('currentUser', JSON.stringify(currentUser))
 							// Navigate to the home page and reload the window

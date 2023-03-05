@@ -58,7 +58,6 @@ const handleFormSubmit = (event) => {
   // clicking delete button for particular user deletes user data from database using the api and removing the same user info from current state
 const clickDelete = (id) => {
   deleteUser(id).then(function (response){
-    console.log(response.data)
     dispatch({ type: "deleteUser", user: response.data })})
 }
   

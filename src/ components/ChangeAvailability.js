@@ -33,16 +33,13 @@ function ChangeAvailability({loggedInUser}) {
           day: getDayOfWeek(newUnavailableDate),
         }]
     }
-    console.log(stageUnavailable)
-    patchUnavailable(loggedInUser._id, stageUnavailable).then(function (response){
-      console.log(response.data)
-    })
+    patchUnavailable(loggedInUser._id, stageUnavailable)
+    window.location.reload(true) //not enought time in production to useContext
   }
 
     function deleteUnavailableItem() {
-      deleteUnavailable(loggedInUser._id, unavailabilityItem).then(function (response){
-        console.log(response.data)
-      })
+      deleteUnavailable(loggedInUser._id, unavailabilityItem)
+      window.location.reload(true) //not enought time in production to useContext
     }
   
   return (

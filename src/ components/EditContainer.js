@@ -29,7 +29,6 @@ function EditContainer() {
     useEffect(() => {
         getRosterById(id).then(function (response){
             setViewingRoster(response.data)
-            console.log(response.data)
         })
 
     // If there are no users in the global state, get them and dispatch an action to update the global state with received data
