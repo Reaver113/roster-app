@@ -1,0 +1,8 @@
+[[redirects]]
+  from = "/"
+  to = "https://roster-app-production-b6ad.up.railway.app/"
+  status = 200
+ 
+ # These are optional
+  force = true
+  headers = {X-From = "Netlify"}
