@@ -26,12 +26,11 @@ function EditRoster({ users, viewingRoster, putRoster}) {
   // useEffect to update the roster using matchNames function
   useEffect(() => {
     setRoster(matchNames(viewingRoster, users))
-    },[])
+    },[users, viewingRoster])
 
   // passPosition handles adding and removing hours from the workingArray for an employee
   function passPosition(employee, hour) {
     // Get the correct hour index number
-    const hourNumber = getHourNumber(hour);
     
     // Create a copy of the workingArray
     const newWorkingArray = [...workingArray];
