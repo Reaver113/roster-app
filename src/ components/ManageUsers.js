@@ -6,7 +6,7 @@ import DeleteIcon from '@mui/icons-material/Delete'
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
-import { dateConverter, formatPhoneNumber, dateToUTC } from "../utils.js"
+import { dateConverter, formatPhoneNumber } from "../utils.js"
 import { aestToUTC } from "../utils.js"
 
 

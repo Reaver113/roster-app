@@ -56,7 +56,7 @@ function Login() {
 	return (
 			<>
 			<div>
-			<img className="logo" src={logo}></img>
+			<img className="logo" alt="logo" src={logo}></img>
 			<form onSubmit={handleFormSubmit}>
 		<TextField
 							className="userInputBox"

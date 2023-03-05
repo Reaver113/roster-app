@@ -30,10 +30,9 @@ function Preview({clickedOption, roster, loggedInUser, users, postUsers, deleteU
     });
     return previous //returns an array of all previous rosters
   }
- 
+
 // A function to render the preview based on what user clicked on which option - current Roster, Previous Rosters, availability change, manage users or create a new roster 
-  const renderPreview = () => {
-        const { current, prev, change, manageUsers, createRoster } = Options
+const renderPreview = () => {
 
         switch (clickedOption) {
             case "Current Roster":

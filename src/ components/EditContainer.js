@@ -4,7 +4,7 @@ import EditRoster from "./EditRoster"
 import { useParams } from "react-router-dom"
 import { CircularProgress } from "@mui/material";
 import { useState, useEffect, useContext } from "react"
-import { dateConverter, getDayOfWeek, matchNames } from "../utils"
+import { dateConverter, getDayOfWeek } from "../utils"
 import { getRosterById, putRoster } from "../State/Roster/Axios.js"
 import { getUsers } from "../State/User/Axios.js"
 import { stateContext } from "../State/stateReducer.js";

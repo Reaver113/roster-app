@@ -11,7 +11,7 @@ export const dateConverter = (dateStr) => {
     return dateStr
   }
   //Otherwise, destructure the string elements and format them according to DD-MM-YYYY.
-  const [yyyy, mm, dd, hh, mi] = dateStr.split(/[/:\-T]/);
+  const [yyyy, mm, dd] = dateStr.split(/[/:\-T]/);
   return `${dd}-${mm}-${yyyy}`;
 }
 

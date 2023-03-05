@@ -4,7 +4,7 @@ import "./Background.css"
 const Background = () => {
 	return(
 			<div>
-					<img className='Background' src={staticBg} />
+					<img className='Background' alt="background" src={staticBg} />
 			</div>
 			
 	)
