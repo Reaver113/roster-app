@@ -1,4 +1,4 @@
-import { arrayToTimeStart, arrayToTimeEnd, hoursToArray, colorHours, getHourNumber, matchNames } from "../utils.js";
+import { arrayToTimeStart, arrayToTimeEnd, hoursToArray, colorHours, matchNames } from "../utils.js";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom"
 import { useNavigate } from "react-router";
