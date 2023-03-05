@@ -6,7 +6,7 @@ import ChangeAvailability from "./ChangeAvailability"
 import ManageUsers from "./ManageUsers"
 import CreateRosterOptions from "./CreateRosterOptions"
 
-function Preview({clickedOption, roster, unavailabilities, users, postUsers, deleteUser, postRoster}) {
+function Preview({clickedOption, roster, loggedInUser, users, postUsers, deleteUser, postRoster}) {
   // A function to get all current rosters based on the start date
   const getCurrentRosters = (roster) => {
     const current = []
@@ -46,7 +46,7 @@ function Preview({clickedOption, roster, unavailabilities, users, postUsers, del
                 )
             case "Change Availability":
                 return (
-                    <ChangeAvailability unavailabilities={unavailabilities} /> //Display for changing the availability details using ChangeAvailability component
+                    <ChangeAvailability loggedInUser={loggedInUser} /> //Display for changing the availability details using ChangeAvailability component
                 )
             case "Manage Users":
                 return (

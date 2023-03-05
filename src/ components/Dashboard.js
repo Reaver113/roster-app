@@ -13,7 +13,7 @@ function Dashboard({getRoster, getCurrentUser, getUsers, postUsers, deleteUser, 
     const [clickedOption, setClickedOption] = useState(null);
 
 		const [roster, setRoster] = useState([])
-		const [unavailabilities, setUnavailabilities] = useState([])
+		const [loggedInUser, setLoggedInUser] = useState()
 
 		const { dispatch, users } = useContext(stateContext)
 
@@ -25,8 +25,7 @@ function Dashboard({getRoster, getCurrentUser, getUsers, postUsers, deleteUser, 
 
 		useEffect(() => {
 			getCurrentUser().then(function (response){
-				setUnavailabilities(response.data)
-				console.log(unavailabilities)
+				setLoggedInUser(response.data)
 			})
 			getRoster().then(function (response){
 				setRoster(response.data)
@@ -38,7 +37,6 @@ function Dashboard({getRoster, getCurrentUser, getUsers, postUsers, deleteUser, 
 	
 	const handleClick = (option) => {
 		setClickedOption(option);
-		console.log(clickedOption)
 	}
 	return (
 	<>
@@ -46,7 +44,7 @@ function Dashboard({getRoster, getCurrentUser, getUsers, postUsers, deleteUser, 
 		{Object.values(renderOptions()).map((option, index) => (
 			<div key={index}>
 				<div className="bar" onClick={() => handleClick(clickedOption === option ? null : option)}>{option} </div>
-				{clickedOption === option && clickedOption !== null && <Preview clickedOption={clickedOption} roster={roster} unavailabilities={unavailabilities} users={users} postUsers={postUsers} deleteUser={deleteUser} postRoster={postRoster}/>}
+				{clickedOption === option && clickedOption !== null && <Preview clickedOption={clickedOption} roster={roster} loggedInUser={loggedInUser} users={users} postUsers={postUsers} deleteUser={deleteUser} postRoster={postRoster}/>}
 			</div>
 			)
 		) }

@@ -34,6 +34,7 @@
 	height: 21.5em;
 	margin-top: 6em;
 	margin-right: 12em;
+	background-color: rgba(49, 155, 187, 0.2);
 }
 
 .unavailabilityList {
@@ -54,7 +55,7 @@
 }
 
 .unavailabilityItem {
-	background-color: rgba(105, 105, 105, 0.5);
+	background-color: rgba(131, 124, 124, 0.5);
 	width: 100%;
 	height: 50px;
 	margin-bottom: 3px;
@@ -65,10 +66,11 @@
 	cursor: pointer;
 }
 
-.unavailabilityItem:first-of-type {
-	border-top-left-radius: 20px;
-	border-top-right-radius: 20px;
-	
+.selectedItem {
+	background-color: rgba(15, 101, 172, 0.5);
+	width: 100%;
+	height: 50px;
+	margin-bottom: 3px;
 }
 
 @media (max-width: 1474px) {
@@ -102,9 +104,10 @@
 		margin-bottom: 1em;
 	}
 
+
 }
 
-@media (max-width: 1080px) {
+@media (max-width: 900px) {
 
 	.Calendar {
 		display: flex;
@@ -131,7 +134,7 @@
 		height: 21.5em;
 		margin-top: 2em;
 		margin-right: auto;
-		margin-left: 15%;
+		margin-left: 0;
 		margin-bottom: 1em;
 	}
 

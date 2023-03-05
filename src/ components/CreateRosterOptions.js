@@ -38,6 +38,8 @@ function CreateRosterOptions({postRoster, users}) {
       };
       const employees = users.map(user => ({
         employee: user._id,
+        start: combineDateTime(newRoster).start,
+        end: combineDateTime(newRoster).start
       }));
       const publishingRoster = {
         start: combineDateTime(newRoster).start,
