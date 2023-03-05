@@ -1,3 +1,22 @@
+# You can view the deployed product here:
+https://main--inspiring-gelato-aae7ec.netlify.app/
+
+and use the login:
+
+email: john@email.com  
+password: john1234
+# Github
+
+You can view the working repo for the front end here : https://github.com/Reaver113/roster-app  
+and the backend repo here: https://github.com/laurajennings/roster-app
+
+# Development:
+
+You can follow our development of this application on Trello:
+
+https://trello.com/b/FvyVnMsZ/roster-app
+
+![Trello](./docs/Trello.png)
 # Rostr readme
 
 With Rostr, you can simplify your business operations and eliminate the frustration that often comes with complicated and confusing rostering software. Our 20 years of combined experience in the retail industry has shown us that most businesses struggle with the inefficient and time-consuming rostering systems available in the market. So, we created a solution that not only meets the demands of retail and hospitality businesses but also makes their lives easier.
@@ -7,7 +26,6 @@ Rostr is designed to be an all-in-one solution for your rostering needs. With it
 The application allows you to create new users and assign them to the desired shifts, ensuring that everyone knows their working hours. Employees can also change their availability if they have upcoming days they can't work. The shifts are displayed in an easy-to-read format, making it convenient for employees to keep track of their working hours.
 
 Rostr is built on a MERN stack (MongoDB, ExpressJS, React, and NodeJS), making it a reliable and secure rostering application for your business.
-
 
 # Starting Thoughts
 
