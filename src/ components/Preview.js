@@ -1,7 +1,6 @@
 import "./Preview.css"
 import React from "react"
 import AllRosters from "./AllRosters"
-import Options from './logic/Options'
 import ChangeAvailability from "./ChangeAvailability"
 import ManageUsers from "./ManageUsers"
 import CreateRosterOptions from "./CreateRosterOptions"

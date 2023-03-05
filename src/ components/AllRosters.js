@@ -15,7 +15,7 @@ function AllRosters({roster}) {
 			</div>
 		}
 		{roster.map((rosterItem) => ( // for each roster item in array, display link to roster details page with its contents
-			<a href={`./roster/${rosterItem._id}`} className="currentContainer" key={rosterItem._id}><img alt="roster Image" src={timetable}></img><div>{getDayOfWeek(rosterItem.start)}<br />{dateConverter(rosterItem.start)}</div></a> // formatted day and date information for each roster item
+			<a href={`./roster/${rosterItem._id}`} className="currentContainer" key={rosterItem._id}><img alt="roster" src={timetable}></img><div>{getDayOfWeek(rosterItem.start)}<br />{dateConverter(rosterItem.start)}</div></a> // formatted day and date information for each roster item
 		))}
 		</>
 	)
