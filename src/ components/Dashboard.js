@@ -26,7 +26,6 @@ function Dashboard({getRoster, getCurrentUser, getUsers, postUsers, deleteUser, 
 		useEffect(() => {
 			getCurrentUser().then(function (response){
 				setLoggedInUser(response.data)
-				dispatch({ type: "setUavailability", uavailability: response.data.unavailable })
 			})
 			getRoster().then(function (response){
 				setRoster(response.data)

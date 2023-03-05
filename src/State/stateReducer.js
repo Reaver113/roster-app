@@ -21,7 +21,6 @@ export default function stateReducer(state, action) {
             })
             return {...state, users: updatedUsers}
         }
-
     // Return current state as default
         default : return state 
     }
