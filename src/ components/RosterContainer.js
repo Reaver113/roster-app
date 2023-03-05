@@ -47,7 +47,7 @@ function RosterContainer() {
         dispatch({ type: "setUsers", users: response.data })
       })
     }
-  },[])
+  },[dispatch, id, users.length])
   
   return (
     token ? 

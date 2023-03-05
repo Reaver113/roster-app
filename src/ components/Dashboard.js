@@ -33,14 +33,14 @@ function Dashboard({getRoster, getCurrentUser, getUsers, postUsers, deleteUser, 
 			getUsers().then(function (response){
 				dispatch({ type: "setUsers", users: response.data })
 			})
-		},[])
+		},[dispatch, getCurrentUser, getRoster, getUsers])
 	
 	const handleClick = (option) => {
 		setClickedOption(option);
 	}
 	return (
 	<>
-		{clickedOption === null && (<img className="logo" src={logo}></img>)}
+		{clickedOption === null && (<img alt="logo" className="logo" src={logo}></img>)}
 		{Object.values(renderOptions()).map((option, index) => (
 			<div key={index}>
 				<div className="bar" onClick={() => handleClick(clickedOption === option ? null : option)}>{option} </div>

@@ -38,7 +38,7 @@ function EditContainer() {
         dispatch({ type: "setUsers", users: response.data })
       })
     }
-    },[])
+    },[dispatch, id, users.length])
 
 
   // This section returns JSX 

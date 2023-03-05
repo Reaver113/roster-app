@@ -13,7 +13,7 @@ function RosterView({ viewingRoster, users }) {
   const [roster, setRoster] = useState([])
   useEffect(() => {
     setRoster(matchNames(viewingRoster, users));
-  },[])
+  },[users, viewingRoster])
 
   return (
     <>
